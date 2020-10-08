@@ -345,7 +345,7 @@ Configuration CIS_WindowsServer2019_v110 {
          # 2.3.1.4 (L1) Ensure 'Accounts: Limit local account use of blank passwords to console logon only' is set to 'Enabled'
          Accounts_Limit_local_account_use_of_blank_passwords_to_console_logon_only                                       = 'Enabled'
          # 2.3.1.5 (L1) Configure 'Accounts: Rename administrator account'
-         Accounts_Rename_administrator_account = if ($Accounts_Administrator_account_status -eq 'Enabled') { 'User_Adm' } else { 'Administrator' } # WARNING! Any value different from Administrator
+         Accounts_Rename_administrator_account = if ($Accounts_Administrator_account_status -eq 'Disabled') { 'User_Adm' } else { 'Administrator' } # WARNING! Any value different from Administrator
          # 2.3.1.6 (L1) Configure 'Accounts: Rename guest account'
          Accounts_Rename_guest_account                                                                                   = 'User_Guest' # WARNING! Any value different from Guest
          # 2.3.2.1 (L1) Ensure 'Audit: Force audit policy subcategory settings (Windows Vista or later) to override audit policy category settings' is set to 'Enabled'
