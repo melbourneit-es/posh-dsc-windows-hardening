@@ -235,7 +235,7 @@ Configuration CIS_WindowsServer2016_v110 {
       #     Policy       = 'Impersonate_a_client_after_authentication'
       #     Identity     = 'Administrators, LOCAL SERVICE, NETWORK SERVICE, SERVICE' and (when the Web Server (IIS) Role with Web Services Role Service is installed) 'IIS_IUSRS'
       #  }
-      
+
 
       #  2.2.33 (L1) Ensure 'Increase scheduling priority' is set to 'Administrators'
        UserRightsAssignment Increaseschedulingpriority {
@@ -359,15 +359,15 @@ Configuration CIS_WindowsServer2016_v110 {
          Devices_Prevent_users_from_installing_printer_drivers = 'Enabled'
          # 2.3.5.1 (L1) Ensure 'Domain controller: Allow server operators to schedule tasks' is set to 'Disabled' (DC only)
          Domain_controller_Allow_server_operators_to_schedule_tasks = 'Disabled'
-         # 2.3.5.2 (L1) Ensure 'Domain controller: LDAP server signing requirements' is set to 'Require signing' (DC only) 
+         # 2.3.5.2 (L1) Ensure 'Domain controller: LDAP server signing requirements' is set to 'Require signing' (DC only)
          Domain_controller_LDAP_server_signing_requirements = 'Require signing'
-         # 2.3.5.3 (L1) Ensure 'Domain controller: Refuse machine account password changes' is set to 'Disabled' (DC only) 
+         # 2.3.5.3 (L1) Ensure 'Domain controller: Refuse machine account password changes' is set to 'Disabled' (DC only)
          Domain_controller_Refuse_machine_account_password_changes = 'Disabled'
          # 2.3.6.1 (L1) Ensure 'Domain member: Digitally encrypt or sign secure channel data (always)' is set to 'Enabled'
-         Domain_member_Digitally_encrypt_or_sign_secure_channel_data_always = 'Enabled' 
+         Domain_member_Digitally_encrypt_or_sign_secure_channel_data_always = 'Enabled'
          # 2.3.6.2 (L1) Ensure 'Domain member: Digitally encrypt secure channel data (when possible)' is set to 'Enabled'
          Domain_member_Digitally_encrypt_secure_channel_data_when_possible = 'Enabled'
-         # 2.3.6.3 (L1) Ensure 'Domain member: Digitally sign secure channel data (when possible)' is set to 'Enabled' 
+         # 2.3.6.3 (L1) Ensure 'Domain member: Digitally sign secure channel data (when possible)' is set to 'Enabled'
          Domain_member_Digitally_sign_secure_channel_data_when_possible = 'Enabled'
          # 2.3.6.4 (L1) Ensure 'Domain member: Disable machine account password changes' is set to 'Disabled'
          Domain_member_Disable_machine_account_password_changes = 'Disabled'
@@ -376,63 +376,63 @@ Configuration CIS_WindowsServer2016_v110 {
          # 2.3.6.6 (L1) Ensure 'Domain member: Require strong (Windows 2000 or later) session key' is set to 'Enabled'
          Domain_member_Require_strong_Windows_2000_or_later_session_key = 'Enabled'
          # 2.3.7.1 (L1) Ensure 'Interactive logon: Do not display last user name' is set to 'Enabled'
-         Interactive_logon_Do_not_display_last_user_name = 'Enabled' 
+         Interactive_logon_Do_not_display_last_user_name = 'Enabled'
          # 2.3.7.2 (L1) Ensure 'Interactive logon: Do not require CTRL+ALT+DEL' is set to 'Disabled'
-         Interactive_logon_Do_not_require_CTRL_ALT_DEL = 'Disabled' 
+         Interactive_logon_Do_not_require_CTRL_ALT_DEL = 'Disabled'
          # 2.3.7.3 (L1) Ensure 'Interactive logon: Machine inactivity limit' is set to '900 or fewer second(s), but not 0'
-         Interactive_logon_Machine_inactivity_limit = '900' 
-         # 2.3.7.4 (L1) Configure 'Interactive logon: Message text for users attempting to log on' 
-         Interactive_logon_Message_text_for_users_attempting_to_log_on = 'This computer system is the property of Acme Corporation and is for authorised use by employees and designated contractors only. By continuing to use this system you indicate your awareness of and consent to these terms and conditions of use.It is the users responsibility to LOG OFF IMMEDIATELY if you do not agree to the conditions stated in this notice.'
+         Interactive_logon_Machine_inactivity_limit = '900'
+         # 2.3.7.4 (L1) Configure 'Interactive logon: Message text for users attempting to log on'
+         Interactive_logon_Message_text_for_users_attempting_to_log_on = 'This computer system is the property of Arq Group Enterprise and is for authorised use by employees and designated contractors only. By continuing to use this system you indicate your awareness of and consent to these terms and conditions of use.It is the users responsibility to LOG OFF IMMEDIATELY if you do not agree to the conditions stated in this notice.'
          # 2.3.7.5 (L1) Configure 'Interactive logon: Message title for users attempting to log on'
          #Interactive_logon_Message_title_for_users_attempting_to_log_on = '<Logon Warning>'
          Interactive_logon_Message_title_for_users_attempting_to_log_on = 'Logon Warning'
-         # 2.3.7.6 (L2) Ensure 'Interactive logon: Number of previous logons to cache (in case domain controller is not available)' is set to '4 or fewer logon(s)' (MS only) 
+         # 2.3.7.6 (L2) Ensure 'Interactive logon: Number of previous logons to cache (in case domain controller is not available)' is set to '4 or fewer logon(s)' (MS only)
          Interactive_logon_Number_of_previous_logons_to_cache_in_case_domain_controller_is_not_available = '4'
          # 2.3.7.7 (L1) Ensure 'Interactive logon: Prompt user to change password before expiration' is set to 'between 5 and 14 days'
          Interactive_logon_Prompt_user_to_change_password_before_expiration = '14'
          # 2.3.7.8 (L1) Ensure 'Interactive logon: Require Domain Controller Authentication to unlock workstation' is set to 'Enabled' (MS only)
-         Interactive_logon_Require_Domain_Controller_authentication_to_unlock_workstation = 'Enabled' 
+         Interactive_logon_Require_Domain_Controller_authentication_to_unlock_workstation = 'Enabled'
          # 2.3.7.9 (L1) Ensure 'Interactive logon: Smart card removal behavior' is set to 'Lock Workstation' or higher
          Interactive_logon_Smart_card_removal_behavior = 'Lock Workstation'
-         # 2.3.8.1 (L1) Ensure 'Microsoft network client: Digitally sign communications (always)' is set to 'Enabled' 
+         # 2.3.8.1 (L1) Ensure 'Microsoft network client: Digitally sign communications (always)' is set to 'Enabled'
          Microsoft_network_client_Digitally_sign_communications_always = 'Enabled'
-         # 2.3.8.2 (L1) Ensure 'Microsoft network client: Digitally sign communications (if server agrees)' is set to 'Enabled' 
+         # 2.3.8.2 (L1) Ensure 'Microsoft network client: Digitally sign communications (if server agrees)' is set to 'Enabled'
          Microsoft_network_client_Digitally_sign_communications_if_server_agrees = 'Enabled'
-         # 2.3.8.3 (L1) Ensure 'Microsoft network client: Send unencrypted password to third-party SMB servers' is set to 'Disabled' 
+         # 2.3.8.3 (L1) Ensure 'Microsoft network client: Send unencrypted password to third-party SMB servers' is set to 'Disabled'
          Microsoft_network_client_Send_unencrypted_password_to_third_party_SMB_servers = 'Disabled'
          # 2.3.9.1 (L1) Ensure 'Microsoft network server: Amount of idle time required before suspending session' is set to '15 or fewer minute(s), but not 0'
-         Microsoft_network_server_Amount_of_idle_time_required_before_suspending_session = '15' 
-         # 2.3.9.2 (L1) Ensure 'Microsoft network server: Digitally sign communications (always)' is set to 'Enabled' 
+         Microsoft_network_server_Amount_of_idle_time_required_before_suspending_session = '15'
+         # 2.3.9.2 (L1) Ensure 'Microsoft network server: Digitally sign communications (always)' is set to 'Enabled'
          Microsoft_network_server_Digitally_sign_communications_always = 'Enabled'
-         # 2.3.9.3 (L1) Ensure 'Microsoft network server: Digitally sign communications (if client agrees)' is set to 'Enabled' 
+         # 2.3.9.3 (L1) Ensure 'Microsoft network server: Digitally sign communications (if client agrees)' is set to 'Enabled'
          Microsoft_network_server_Digitally_sign_communications_if_client_agrees = 'Enabled'
          # 2.3.9.4 (L1) Ensure 'Microsoft network server: Disconnect clients when logon hours expire' is set to 'Enabled'
-         Microsoft_network_server_Disconnect_clients_when_logon_hours_expire = 'Enabled' 
-         # 2.3.9.5 (L1) Ensure 'Microsoft network server: Server SPN target name validation level' is set to 'Accept if provided by client' or higher (MS only) 
+         Microsoft_network_server_Disconnect_clients_when_logon_hours_expire = 'Enabled'
+         # 2.3.9.5 (L1) Ensure 'Microsoft network server: Server SPN target name validation level' is set to 'Accept if provided by client' or higher (MS only)
          #Microsoft_network_server_Server_SPN_target_name_validation_level = 'Accept if provided by client'
          Microsoft_network_server_Server_SPN_target_name_validation_level = 'Required from client'
          # 2.3.10.1 (L1) Ensure 'Network access: Allow anonymous SID/Name translation' is set to 'Disabled'
-         Network_access_Allow_anonymous_SID_Name_translation = 'Disabled' 
-         # 2.3.10.2 (L1) Ensure 'Network access: Do not allow anonymous enumeration of SAM accounts' is set to 'Enabled' (MS only) 
+         Network_access_Allow_anonymous_SID_Name_translation = 'Disabled'
+         # 2.3.10.2 (L1) Ensure 'Network access: Do not allow anonymous enumeration of SAM accounts' is set to 'Enabled' (MS only)
          Network_access_Do_not_allow_anonymous_enumeration_of_SAM_accounts = 'Enabled'
-         # 2.3.10.3 (L1) Ensure 'Network access: Do not allow anonymous enumeration of SAM accounts and shares' is set to 'Enabled' (MS only) 
+         # 2.3.10.3 (L1) Ensure 'Network access: Do not allow anonymous enumeration of SAM accounts and shares' is set to 'Enabled' (MS only)
          Network_access_Do_not_allow_anonymous_enumeration_of_SAM_accounts_and_shares = 'Enabled'
          # 2.3.10.4 (L2) Ensure 'Network access: Do not allow storage of passwords and credentials for network authentication' is set to 'Enabled'
-         Network_access_Do_not_allow_storage_of_passwords_and_credentials_for_network_authentication = 'Enabled' 
+         Network_access_Do_not_allow_storage_of_passwords_and_credentials_for_network_authentication = 'Enabled'
          # 2.3.10.5 (L1) Ensure 'Network access: Let Everyone permissions apply to anonymous users' is set to 'Disabled'
-         Network_access_Let_Everyone_permissions_apply_to_anonymous_users = 'Disabled' 
+         Network_access_Let_Everyone_permissions_apply_to_anonymous_users = 'Disabled'
          # 2.3.10.6 (L1) Configure 'Network access: Named Pipes that can be accessed anonymously' (DC only)
          Network_access_Named_Pipes_that_can_be_accessed_anonymously = ''
-         # 2.3.10.7 (L1) Configure 'Network access: Named Pipes that can be accessed anonymously' (MS only) 
-         # 2.3.10.8 (L1) Configure 'Network access: Remotely accessible registry paths' 
+         # 2.3.10.7 (L1) Configure 'Network access: Named Pipes that can be accessed anonymously' (MS only)
+         # 2.3.10.8 (L1) Configure 'Network access: Remotely accessible registry paths'
          # Commented out because of bug in SecurityPolicyDSC Module https://github.com/dsccommunity/SecurityPolicyDSC/issues/83
          #Network_access_Remotely_accessible_registry_paths = 'System\CurrentControlSet\Control\ProductOptions, System\CurrentControlSet\Control\Server Applications, SOFTWARE\Microsoft\Windows NT\CurrentVersion'
-         # 2.3.10.9 (L1) Configure 'Network access: Remotely accessible registry paths and sub-paths' 
+         # 2.3.10.9 (L1) Configure 'Network access: Remotely accessible registry paths and sub-paths'
          # Commented out because of bug in SecurityPolicyDSC Module https://github.com/dsccommunity/SecurityPolicyDSC/issues/83
          #Network_access_Remotely_accessible_registry_paths_and_subpaths = 'System\CurrentControlSet\Control\Print\Printers, System\CurrentControlSet\Services\Eventlog, Software\Microsoft\OLAP Server, Software\Microsoft\Windows NT\CurrentVersion\Print, Software\Microsoft\Windows NT\CurrentVersion\Windows, System\CurrentControlSet\Control\ContentIndex, System\CurrentControlSet\Control\Terminal Server, System\CurrentControlSet\Control\Terminal Server\UserConfig, System\CurrentControlSet\Control\Terminal Server\DefaultUserConfiguration, Software\Microsoft\Windows NT\CurrentVersion\Perflib, System\CurrentControlSet\Services\SysmonLog'
-         # 2.3.10.10 (L1) Ensure 'Network access: Restrict anonymous access to Named Pipes and Shares' is set to 'Enabled' 
-         Network_access_Restrict_anonymous_access_to_Named_Pipes_and_Shares = 'Enabled' 
-         # 2.3.10.11 (L1) Ensure 'Network access: Restrict clients allowed to make remote calls to SAM' is set to 'Administrators: Remote Access: Allow' (MS only) 
+         # 2.3.10.10 (L1) Ensure 'Network access: Restrict anonymous access to Named Pipes and Shares' is set to 'Enabled'
+         Network_access_Restrict_anonymous_access_to_Named_Pipes_and_Shares = 'Enabled'
+         # 2.3.10.11 (L1) Ensure 'Network access: Restrict clients allowed to make remote calls to SAM' is set to 'Administrators: Remote Access: Allow' (MS only)
          #Network_access_Restrict_clients_allowed_to_make_remote_calls_to_SAM = 'Administrators: Remote Access: Allow'
          Network_access_Restrict_clients_allowed_to_make_remote_calls_to_SAM = @(
             MSFT_RestrictedRemoteSamSecurityDescriptor
@@ -442,51 +442,51 @@ Configuration CIS_WindowsServer2016_v110 {
             }
             )
 
-         # 2.3.10.12 (L1) Ensure 'Network access: Shares that can be accessed anonymously' is set to 'None' 
+         # 2.3.10.12 (L1) Ensure 'Network access: Shares that can be accessed anonymously' is set to 'None'
          Network_access_Shares_that_can_be_accessed_anonymously = ''
-         # 2.3.10.13 (L1) Ensure 'Network access: Sharing and security model for local accounts' is set to 'Classic - local users authenticate as themselves' 
+         # 2.3.10.13 (L1) Ensure 'Network access: Sharing and security model for local accounts' is set to 'Classic - local users authenticate as themselves'
          Network_access_Sharing_and_security_model_for_local_accounts = 'Classic - local users authenticate as themselves'
-         # 2.3.11.1 (L1) Ensure 'Network security: Allow Local System to use computer identity for NTLM' is set to 'Enabled' 
+         # 2.3.11.1 (L1) Ensure 'Network security: Allow Local System to use computer identity for NTLM' is set to 'Enabled'
          Network_security_Allow_Local_System_to_use_computer_identity_for_NTLM = 'Enabled'
-         # 2.3.11.2 (L1) Ensure 'Network security: Allow LocalSystem NULL session fallback' is set to 'Disabled' 
+         # 2.3.11.2 (L1) Ensure 'Network security: Allow LocalSystem NULL session fallback' is set to 'Disabled'
          Network_security_Allow_LocalSystem_NULL_session_fallback = 'Disabled'
-         # 2.3.11.3 (L1) Ensure 'Network Security: Allow PKU2U authentication requests to this computer to use online identities' is set to 'Disabled' 
+         # 2.3.11.3 (L1) Ensure 'Network Security: Allow PKU2U authentication requests to this computer to use online identities' is set to 'Disabled'
          Network_security_Allow_PKU2U_authentication_requests_to_this_computer_to_use_online_identities = 'Disabled'
-         # 2.3.11.4 (L1) Ensure 'Network security: Configure encryption types allowed for Kerberos' is set to 'AES128_HMAC_SHA1, AES256_HMAC_SHA1, Future encryption types' 
+         # 2.3.11.4 (L1) Ensure 'Network security: Configure encryption types allowed for Kerberos' is set to 'AES128_HMAC_SHA1, AES256_HMAC_SHA1, Future encryption types'
          Network_security_Configure_encryption_types_allowed_for_Kerberos = 'AES128_HMAC_SHA1','AES256_HMAC_SHA1','FUTURE'
-         # 2.3.11.5 (L1) Ensure 'Network security: Do not store LAN Manager hash value on next password change' is set to 'Enabled' 
+         # 2.3.11.5 (L1) Ensure 'Network security: Do not store LAN Manager hash value on next password change' is set to 'Enabled'
          Network_security_Do_not_store_LAN_Manager_hash_value_on_next_password_change = 'Enabled'
-         # 2.3.11.6 (L1) Ensure 'Network security: Force logoff when logon hours expire' is set to 'Enabled' 
+         # 2.3.11.6 (L1) Ensure 'Network security: Force logoff when logon hours expire' is set to 'Enabled'
          Network_security_Force_logoff_when_logon_hours_expire = 'Enabled'
          # 2.3.11.7 (L1) Ensure 'Network security: LAN Manager authentication level' is set to 'Send NTLMv2 response only. Refuse LM & NTLM'
-         Network_security_LAN_Manager_authentication_level = 'Send NTLMv2 responses only. Refuse LM & NTLM' 
+         Network_security_LAN_Manager_authentication_level = 'Send NTLMv2 responses only. Refuse LM & NTLM'
          # 2.3.11.8 (L1) Ensure 'Network security: LDAP client signing requirements' is set to 'Negotiate signing' or higher
-         Network_security_LDAP_client_signing_requirements = 'Negotiate signing' 
-         # 2.3.11.9 (L1) Ensure 'Network security: Minimum session security for NTLM SSP based (including secure RPC) clients' is set to 'Require NTLMv2 session security, Require 128-bit encryption' 
+         Network_security_LDAP_client_signing_requirements = 'Negotiate signing'
+         # 2.3.11.9 (L1) Ensure 'Network security: Minimum session security for NTLM SSP based (including secure RPC) clients' is set to 'Require NTLMv2 session security, Require 128-bit encryption'
          Network_security_Minimum_session_security_for_NTLM_SSP_based_including_secure_RPC_clients = 'Both options checked'
-         # 2.3.11.10 (L1) Ensure 'Network security: Minimum session security for NTLM SSP based (including secure RPC) servers' is set to 'Require NTLMv2 session security, Require 128-bit encryption' 
-         Network_security_Minimum_session_security_for_NTLM_SSP_based_including_secure_RPC_servers = 'Both options checked' 
+         # 2.3.11.10 (L1) Ensure 'Network security: Minimum session security for NTLM SSP based (including secure RPC) servers' is set to 'Require NTLMv2 session security, Require 128-bit encryption'
+         Network_security_Minimum_session_security_for_NTLM_SSP_based_including_secure_RPC_servers = 'Both options checked'
          # 2.3.13.1 (L1) Ensure 'Shutdown: Allow system to be shut down without having to log on' is set to 'Disabled'
-         Shutdown_Allow_system_to_be_shut_down_without_having_to_log_on = 'Disabled' 
+         Shutdown_Allow_system_to_be_shut_down_without_having_to_log_on = 'Disabled'
          # 2.3.15.1 (L1) Ensure 'System objects: Require case insensitivity for non-Windows subsystems' is set to 'Enabled'
-         System_objects_Require_case_insensitivity_for_non_Windows_subsystems = 'Enabled' 
+         System_objects_Require_case_insensitivity_for_non_Windows_subsystems = 'Enabled'
          # 2.3.15.2 (L1) Ensure 'System objects: Strengthen default permissions of internal system objects (e.g. Symbolic Links)' is set to 'Enabled'
-         System_objects_Strengthen_default_permissions_of_internal_system_objects_eg_Symbolic_Links = 'Enabled' 
-         # 2.3.17.1 (L1) Ensure 'User Account Control: Admin Approval Mode for the Built-in Administrator account' is set to 'Enabled' 
+         System_objects_Strengthen_default_permissions_of_internal_system_objects_eg_Symbolic_Links = 'Enabled'
+         # 2.3.17.1 (L1) Ensure 'User Account Control: Admin Approval Mode for the Built-in Administrator account' is set to 'Enabled'
          User_Account_Control_Admin_Approval_Mode_for_the_Built_in_Administrator_account = 'Enabled'
-         # 2.3.17.2 (L1) Ensure 'User Account Control: Allow UIAccess applications to prompt for elevation without using the secure desktop' is set to 'Disabled' 
+         # 2.3.17.2 (L1) Ensure 'User Account Control: Allow UIAccess applications to prompt for elevation without using the secure desktop' is set to 'Disabled'
          User_Account_Control_Allow_UIAccess_applications_to_prompt_for_elevation_without_using_the_secure_desktop = 'Disabled'
-         # 2.3.17.3 (L1) Ensure 'User Account Control: Behavior of the elevation prompt for administrators in Admin Approval Mode' is set to 'Prompt for consent on the secure desktop' 
+         # 2.3.17.3 (L1) Ensure 'User Account Control: Behavior of the elevation prompt for administrators in Admin Approval Mode' is set to 'Prompt for consent on the secure desktop'
          User_Account_Control_Behavior_of_the_elevation_prompt_for_administrators_in_Admin_Approval_Mode = 'Prompt for consent on the secure desktop'
-         # 2.3.17.4 (L1) Ensure 'User Account Control: Behavior of the elevation prompt for standard users' is set to 'Automatically deny elevation requests' 
+         # 2.3.17.4 (L1) Ensure 'User Account Control: Behavior of the elevation prompt for standard users' is set to 'Automatically deny elevation requests'
          User_Account_Control_Behavior_of_the_elevation_prompt_for_standard_users = 'Automatically deny elevation request'
-         # 2.3.17.5 (L1) Ensure 'User Account Control: Detect application installations and prompt for elevation' is set to 'Enabled' 
+         # 2.3.17.5 (L1) Ensure 'User Account Control: Detect application installations and prompt for elevation' is set to 'Enabled'
          User_Account_Control_Detect_application_installations_and_prompt_for_elevation = 'Enabled'
-         # 2.3.17.6 (L1) Ensure 'User Account Control: Only elevate UIAccess applications that are installed in secure locations' is set to 'Enabled' 
+         # 2.3.17.6 (L1) Ensure 'User Account Control: Only elevate UIAccess applications that are installed in secure locations' is set to 'Enabled'
          User_Account_Control_Only_elevate_UIAccess_applications_that_are_installed_in_secure_locations = 'Enabled'
          # 2.3.17.7 (L1) Ensure 'User Account Control: Run all administrators in Admin Approval Mode' is set to 'Enabled'
          User_Account_Control_Run_all_administrators_in_Admin_Approval_Mode = 'Enabled'
-         # 2.3.17.8 (L1) Ensure 'User Account Control: Switch to the secure desktop when prompting for elevation' is set to 'Enabled' 
+         # 2.3.17.8 (L1) Ensure 'User Account Control: Switch to the secure desktop when prompting for elevation' is set to 'Enabled'
          User_Account_Control_Switch_to_the_secure_desktop_when_prompting_for_elevation = 'Enabled'
          # 2.3.17.9 (L1) Ensure 'User Account Control: Virtualize file and registry write failures to per-user locations' is set to 'Enabled'
          User_Account_Control_Virtualize_file_and_registry_write_failures_to_per_user_locations = 'Enabled'
@@ -752,23 +752,23 @@ Configuration CIS_WindowsServer2016_v110 {
 
         AuditPolicySubcategory 'Audit Application Group Management (Failure)'
         {
-            Name      = 'Application Group Management'    
+            Name      = 'Application Group Management'
             Ensure    = 'Present'
             AuditFlag = 'Failure'
         }
 
         # 17.2.2 (L1) Ensure 'Audit Computer Account Management' is set to 'Success and Failure'
-        AuditPolicySubcategory 'Audit Computer Account Management (Failure)' 
+        AuditPolicySubcategory 'Audit Computer Account Management (Failure)'
         {
             Name      = 'Computer Account Management'
             Ensure    = 'Present'
-            AuditFlag = 'Failure'      
+            AuditFlag = 'Failure'
          }
 
          AuditPolicySubcategory 'Audit Computer Account Management (Success)' {
             Name      = 'Computer Account Management'
-            Ensure    = 'Present'   
-            AuditFlag = 'Success'      
+            Ensure    = 'Present'
+            AuditFlag = 'Success'
          }
 
        # 17.2.3 (L1) Ensure 'Audit Distribution Group Management' is set to 'Success and Failure' (DC only)
@@ -823,7 +823,7 @@ Configuration CIS_WindowsServer2016_v110 {
             AuditFlag = 'Success'
         }
 
-        # 17.3.1 (L1) Ensure 'Audit PNP Activity' is set to 'Success' 
+        # 17.3.1 (L1) Ensure 'Audit PNP Activity' is set to 'Success'
         AuditPolicySubcategory 'Audit PNP Activity (Success)' {
             Name      = 'Plug and Play Events'
             Ensure    = 'Present'
@@ -887,7 +887,7 @@ Configuration CIS_WindowsServer2016_v110 {
             Ensure    = 'Present'
             AuditFlag = 'Failure'
         }
-        
+
         # 17.5.2 (L1) Ensure 'Audit Group Membership' is set to 'Success'
         AuditPolicySubcategory 'Audit Group Membership (Success)' {
             Name      = 'Group Membership'
@@ -900,7 +900,7 @@ Configuration CIS_WindowsServer2016_v110 {
             Ensure    = 'Absent'
             AuditFlag = 'Failure'
             }
-        
+
         # 17.5.3 (L1) Ensure 'Audit Logoff' is set to 'Success'
         AuditPolicySubcategory 'Audit Logoff (Success)' {
             Name      = 'Logoff'
@@ -913,7 +913,7 @@ Configuration CIS_WindowsServer2016_v110 {
             Ensure    = 'Absent'
             AuditFlag = 'Failure'
         }
-        
+
         # 17.5.4 (L1) Ensure 'Audit Logon' is set to 'Success and Failure'
         AuditPolicySubcategory 'Audit Logon (Success)' {
             Name      = 'Logon'
@@ -926,7 +926,7 @@ Configuration CIS_WindowsServer2016_v110 {
             Ensure    = 'Present'
             AuditFlag = 'Failure'
         }
-        
+
         # 17.5.5 (L1) Ensure 'Audit Other Logon/Logoff Events' is set to 'Success and Failure'
         AuditPolicySubcategory 'Audit Other Logon/Logoff Events (Failure)' {
             Name      = 'Other Logon/Logoff Events'
@@ -939,7 +939,7 @@ Configuration CIS_WindowsServer2016_v110 {
             Ensure    = 'Present'
             AuditFlag = 'Success'
         }
-        
+
         # 17.5.6 (L1) Ensure 'Audit Special Logon' is set to 'Success'
         AuditPolicySubcategory 'Audit Special Logon (Success)' {
             Name      = 'Special Logon'
@@ -952,7 +952,7 @@ Configuration CIS_WindowsServer2016_v110 {
             Ensure    = 'Absent'
             AuditFlag = 'Failure'
         }
-        
+
         # 17.6.1 (L1) Ensure 'Audit Other Object Access Events' is set to 'Success and Failure'
         AuditPolicySubcategory 'Audit Other Object Access Events (Success)' {
             Name      = 'Other Object Access Events'
@@ -965,7 +965,7 @@ Configuration CIS_WindowsServer2016_v110 {
             Ensure    = 'Present'
             AuditFlag = 'Failure'
         }
-        
+
         # 17.6.2 (L1) Ensure 'Audit Removable Storage' is set to 'Success and Failure'
         AuditPolicySubcategory 'Audit Removable Storage (Success)' {
             Name      = 'Removable Storage'
@@ -978,7 +978,7 @@ Configuration CIS_WindowsServer2016_v110 {
             Ensure    = 'Present'
             AuditFlag = 'Failure'
         }
-        
+
         # 17.7.1 (L1) Ensure 'Audit Audit Policy Change' is set to 'Success and Failure'
         AuditPolicySubcategory 'Audit Policy Change (Success)' {
             Name      = 'Audit Policy Change'
@@ -991,7 +991,7 @@ Configuration CIS_WindowsServer2016_v110 {
             Ensure    = 'Present'
             AuditFlag = 'Failure'
         }
-        
+
         # 17.7.2 (L1) Ensure 'Audit Authentication Policy Change' is set to 'Success'
         AuditPolicySubcategory 'Audit Authentication Policy Change (Success)' {
             Name      = 'Authentication Policy Change'
@@ -1004,7 +1004,7 @@ Configuration CIS_WindowsServer2016_v110 {
             Ensure    = 'Absent'
             AuditFlag = 'Failure'
         }
-        
+
         # 17.7.3 (L1) Ensure 'Audit Authorization Policy Change' is set to 'Success'
         AuditPolicySubcategory 'Audit Authorization Policy Change (Success)' {
             Name      = 'Authorization Policy Change'
@@ -1017,7 +1017,7 @@ Configuration CIS_WindowsServer2016_v110 {
             Ensure    = 'Absent'
             AuditFlag = 'Failure'
         }
-        
+
         # 17.8.1 (L1) Ensure 'Audit Sensitive Privilege Use' is set to 'Success and Failure'
         AuditPolicySubcategory 'Audit Sensitive Privilege Use (Failure)' {
             Name      = 'Sensitive Privilege Use'
@@ -1030,7 +1030,7 @@ Configuration CIS_WindowsServer2016_v110 {
             Ensure    = 'Present'
             AuditFlag = 'Success'
         }
-        
+
         # 17.9.1 (L1) Ensure 'Audit IPsec Driver' is set to 'Success and Failure'
         AuditPolicySubcategory 'Audit IPsec Driver (Failure)' {
             Name      = 'IPsec Driver'
@@ -1043,7 +1043,7 @@ Configuration CIS_WindowsServer2016_v110 {
             Ensure    = 'Present'
             AuditFlag = 'Success'
         }
-        
+
         # 17.9.2 (L1) Ensure 'Audit Other System Events' is set to 'Success and Failure'
         AuditPolicySubcategory 'Audit Other System Events (Failure)' {
             Name      = 'Other System Events'
@@ -1056,7 +1056,7 @@ Configuration CIS_WindowsServer2016_v110 {
             Ensure    = 'Present'
             AuditFlag = 'Success'
         }
-        
+
         # 17.9.3 (L1) Ensure 'Audit Security State Change' is set to 'Success'
         AuditPolicySubcategory 'Audit Security State Change (Success)' {
             Name      = 'Security State Change'
@@ -1069,7 +1069,7 @@ Configuration CIS_WindowsServer2016_v110 {
             Ensure    = 'Absent'
             AuditFlag = 'Failure'
         }
-        
+
         # 17.9.4 (L1) Ensure 'Audit Security System Extension' is set to 'Success and Failure'
         AuditPolicySubcategory 'Audit Security System Extension (Failure)' {
             Name      = 'Security System Extension'
@@ -1082,7 +1082,7 @@ Configuration CIS_WindowsServer2016_v110 {
             Ensure    = 'Present'
             AuditFlag = 'Success'
         }
-        
+
         # 17.9.5 (L1) Ensure 'Audit System Integrity' is set to 'Success and Failure'
         AuditPolicySubcategory 'Audit System Integrity (Failure)' {
             Name      = 'System Integrity'
@@ -1095,14 +1095,14 @@ Configuration CIS_WindowsServer2016_v110 {
             Ensure    = 'Present'
             AuditFlag = 'Success'
         }
-       
+
        # 18.1.1.1 (L1) Ensure 'Prevent enabling lock screen camera' is set to 'Enabled'
        Registry 'NoLockScreenCamera' {
            Ensure      = 'Present'
            Key         = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Personalization'
-           ValueName   = 'NoLockScreenCamera' 
-           ValueType   = 'DWord' 
-           ValueData   = '1' 
+           ValueName   = 'NoLockScreenCamera'
+           ValueType   = 'DWord'
+           ValueData   = '1'
        }
 
        #  18.1.1.2 (L1) Ensure 'Prevent enabling lock screen slide show' is set to 'Enabled'
@@ -1149,7 +1149,7 @@ Configuration CIS_WindowsServer2016_v110 {
           ValueType    = 'DWord'
           ValueData    = '1'
        }
-       
+
        #  18.2.4 (L1) Ensure 'Password Settings: Password Complexity' is set to 'Enabled: Large letters + small letters + numbers + special characters' (MS only)
        Registry 'PasswordComplexity' {
           Ensure       = 'Present'
@@ -1376,7 +1376,7 @@ Configuration CIS_WindowsServer2016_v110 {
           ValueData    = '0'
        }
 
-       
+
        #  18.5.9.1 (L2) Ensure 'Turn on Mapper I/O (LLTDIO) driver' is set to 'Disabled'
        Registry 'AllowLLTDIOOnDomain' {
           Ensure       = 'Present'
@@ -1385,7 +1385,7 @@ Configuration CIS_WindowsServer2016_v110 {
           ValueType    = 'DWord'
           ValueData    = '0'
        }
-       
+
        #  18.5.9.1 (L2) Ensure 'Turn on Mapper I/O (LLTDIO) driver' is set to 'Disabled'
        Registry 'AllowLLTDIOOnPublicNet' {
           Ensure       = 'Present'
@@ -1394,7 +1394,7 @@ Configuration CIS_WindowsServer2016_v110 {
           ValueType    = 'DWord'
           ValueData    = '0'
        }
-       
+
        #  18.5.9.1 (L2) Ensure 'Turn on Mapper I/O (LLTDIO) driver' is set to 'Disabled'
        Registry 'EnableLLTDIO' {
           Ensure       = 'Present'
@@ -1403,7 +1403,7 @@ Configuration CIS_WindowsServer2016_v110 {
           ValueType    = 'DWord'
           ValueData    = '0'
        }
-       
+
        #  18.5.9.1 (L2) Ensure 'Turn on Mapper I/O (LLTDIO) driver' is set to 'Disabled'
        Registry 'ProhibitLLTDIOOnPrivateNet' {
           Ensure       = 'Present'
@@ -1556,7 +1556,7 @@ Configuration CIS_WindowsServer2016_v110 {
           ValueType    = 'DWord'
           ValueData    = '0'
        }
-       
+
        #  18.5.20.2 (L2) Ensure 'Prohibit access of the Windows Connect Nowwizards' is set to 'Enabled'
        Registry 'DisableWcnUi' {
           Ensure       = 'Present'
@@ -1574,7 +1574,7 @@ Configuration CIS_WindowsServer2016_v110 {
           ValueType  = 'DWord'
           ValueData  = '1'
        }
-       
+
        #  18.5.21.2 (L2) Ensure '..'
        Registry 'fBlockNonDomain' {
           Ensure     = 'Present'
@@ -2078,7 +2078,7 @@ Configuration CIS_WindowsServer2016_v110 {
           ValueType  = 'DWord'
           ValueData  = '255'
        }
-       
+
        #  18.9.10.1.1 (L1) Ensure 'Configure enhanced anti-spoofing' is set to 'Enabled'
        Registry 'EnhancedAntiSpoofing' {
           Ensure     = 'Present'
@@ -2113,8 +2113,8 @@ Configuration CIS_WindowsServer2016_v110 {
           ValueName  = 'RequirePinForPairing'
           ValueType  = 'DWord'
           ValueData  = '1'
-       }       
-       
+       }
+
        # 18.9.15.1 (L1) Ensure 'Do not display the password reveal button' is set to 'Enabled'
        Registry 'DisablePasswordReveal' {
            Ensure      = 'Present'
@@ -2618,7 +2618,7 @@ Configuration CIS_WindowsServer2016_v110 {
           ValueType  = 'DWord'
           ValueData  = '1'
        }
-       
+
        #  18.9.80.1.1 (L1) Ensure 'Configure Windows Defender SmartScreen' is set to 'Enabled: Warn and prevent bypass'
        Registry 'EnableSmartScreen' {
           Ensure     = 'Present'
@@ -2636,7 +2636,7 @@ Configuration CIS_WindowsServer2016_v110 {
           ValueType  = 'String'
           ValueData  = 'Block'
        }
-       
+
 
        #  18.9.84.1 (L2) Ensure 'Allow suggested apps in Windows Ink Workspace' is set to 'Disabled'
        Registry 'AllowSuggestedAppsInWindowsInkWorkspace' {
