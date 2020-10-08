@@ -3,11 +3,11 @@ Configuration CIS_Windows10_v181 {
     param (
         [string[]]$NodeName ='localhost'
         )
- 
+
     Import-DscResource -ModuleName 'PSDesiredStateConfiguration'
     Import-DscResource -ModuleName 'AuditPolicyDsc'
     Import-DscResource -ModuleName 'SecurityPolicyDsc'
- 
+
     Node $NodeName {
         AccountPolicy AccountPolicies
         {
@@ -120,7 +120,7 @@ Configuration CIS_Windows10_v181 {
         UserRightsAssignment Debugprograms {
             Policy       = 'Debug_programs'
             Identity     = 'Administrators'
-        }        
+        }
 
         # 2.2.16 (L1) Ensure 'Deny access to this computer from the network' is set to 'Guests, Local account'
         UserRightsAssignment Denyaccesstothiscomputerfromthenetwork {
@@ -289,10 +289,10 @@ Configuration CIS_Windows10_v181 {
             # 2.3.4.2 (L1) Ensure 'Devices: Prevent users from installing printer drivers' is set to 'Enabled'
             Devices_Prevent_users_from_installing_printer_drivers = 'Enabled'
             # 2.3.6.1 (L1) Ensure 'Domain member: Digitally encrypt or sign secure channel data (always)' is set to 'Enabled'
-            Domain_member_Digitally_encrypt_or_sign_secure_channel_data_always = 'Enabled' 
+            Domain_member_Digitally_encrypt_or_sign_secure_channel_data_always = 'Enabled'
             # 2.3.6.2 (L1) Ensure 'Domain member: Digitally encrypt secure channel data (when possible)' is set to 'Enabled'
             Domain_member_Digitally_encrypt_secure_channel_data_when_possible = 'Enabled'
-            # 2.3.6.3 (L1) Ensure 'Domain member: Digitally sign secure channel data (when possible)' is set to 'Enabled' 
+            # 2.3.6.3 (L1) Ensure 'Domain member: Digitally sign secure channel data (when possible)' is set to 'Enabled'
             Domain_member_Digitally_sign_secure_channel_data_when_possible = 'Enabled'
             # 2.3.6.4 (L1) Ensure 'Domain member: Disable machine account password changes' is set to 'Disabled'
             Domain_member_Disable_machine_account_password_changes = 'Disabled'
@@ -301,14 +301,14 @@ Configuration CIS_Windows10_v181 {
             # 2.3.6.6 (L1) Ensure 'Domain member: Require strong (Windows 2000 or later) session key' is set to 'Enabled'
             Domain_member_Require_strong_Windows_2000_or_later_session_key = 'Enabled'
             # 2.3.7.1 (L1) Ensure 'Interactive logon: Do not require CTRL+ALT+DEL' is set to 'Disabled'
-            Interactive_logon_Do_not_require_CTRL_ALT_DEL = 'Disabled' 
+            Interactive_logon_Do_not_require_CTRL_ALT_DEL = 'Disabled'
             # 2.3.7.2 (L1) Ensure 'Interactive logon: Do not display last user name' is set to 'Enabled'
-            Interactive_logon_Do_not_display_last_user_name = 'Enabled' 
+            Interactive_logon_Do_not_display_last_user_name = 'Enabled'
             # 2.3.7.3 (BL) Ensure 'Interactive logon: Machine account lockout threshold' is set to '10 or fewer invalid logon attempts, but not 0'
-            Interactive_logon_Machine_account_lockout_threshold = '10'            
+            Interactive_logon_Machine_account_lockout_threshold = '10'
             # 2.3.7.4 (L1) Ensure 'Interactive logon: Machine inactivity limit' is set to '900 or fewer second(s), but not 0'
-            Interactive_logon_Machine_inactivity_limit = '900' 
-            # 2.3.7.5 (L1) Configure 'Interactive logon: Message text for users attempting to log on' 
+            Interactive_logon_Machine_inactivity_limit = '900'
+            # 2.3.7.5 (L1) Configure 'Interactive logon: Message text for users attempting to log on'
             Interactive_logon_Message_text_for_users_attempting_to_log_on = 'This computer system is the property of Acme Corporation and is for authorised use by employees and designated contractors only. By continuing to use this system you indicate your awareness of and consent to these terms and conditions of use.It is the users responsibility to LOG OFF IMMEDIATELY if you do not agree to the conditions stated in this notice.'
             # 2.3.7.6 (L1) Configure 'Interactive logon: Message title for users attempting to log on'
             Interactive_logon_Message_title_for_users_attempting_to_log_on = 'Logon Warning'
@@ -318,43 +318,43 @@ Configuration CIS_Windows10_v181 {
             Interactive_logon_Prompt_user_to_change_password_before_expiration = '14'
             # 2.3.7.9 (L1) Ensure 'Interactive logon: Smart card removal behavior' is set to 'Lock Workstation' or higher
             Interactive_logon_Smart_card_removal_behavior = 'Lock Workstation'
-            # 2.3.8.1 (L1) Ensure 'Microsoft network client: Digitally sign communications (always)' is set to 'Enabled' 
+            # 2.3.8.1 (L1) Ensure 'Microsoft network client: Digitally sign communications (always)' is set to 'Enabled'
             Microsoft_network_client_Digitally_sign_communications_always = 'Enabled'
-            # 2.3.8.2 (L1) Ensure 'Microsoft network client: Digitally sign communications (if server agrees)' is set to 'Enabled' 
+            # 2.3.8.2 (L1) Ensure 'Microsoft network client: Digitally sign communications (if server agrees)' is set to 'Enabled'
             Microsoft_network_client_Digitally_sign_communications_if_server_agrees = 'Enabled'
-            # 2.3.8.3 (L1) Ensure 'Microsoft network client: Send unencrypted password to third-party SMB servers' is set to 'Disabled' 
+            # 2.3.8.3 (L1) Ensure 'Microsoft network client: Send unencrypted password to third-party SMB servers' is set to 'Disabled'
             Microsoft_network_client_Send_unencrypted_password_to_third_party_SMB_servers = 'Disabled'
             # 2.3.9.1 (L1) Ensure 'Microsoft network server: Amount of idle time required before suspending session' is set to '15 or fewer minute(s), but not 0'
-            Microsoft_network_server_Amount_of_idle_time_required_before_suspending_session = '15' 
-            # 2.3.9.2 (L1) Ensure 'Microsoft network server: Digitally sign communications (always)' is set to 'Enabled' 
+            Microsoft_network_server_Amount_of_idle_time_required_before_suspending_session = '15'
+            # 2.3.9.2 (L1) Ensure 'Microsoft network server: Digitally sign communications (always)' is set to 'Enabled'
             Microsoft_network_server_Digitally_sign_communications_always = 'Enabled'
-            # 2.3.9.3 (L1) Ensure 'Microsoft network server: Digitally sign communications (if client agrees)' is set to 'Enabled' 
+            # 2.3.9.3 (L1) Ensure 'Microsoft network server: Digitally sign communications (if client agrees)' is set to 'Enabled'
             Microsoft_network_server_Digitally_sign_communications_if_client_agrees = 'Enabled'
             # 2.3.9.4 (L1) Ensure 'Microsoft network server: Disconnect clients when logon hours expire' is set to 'Enabled'
-            Microsoft_network_server_Disconnect_clients_when_logon_hours_expire = 'Enabled' 
+            Microsoft_network_server_Disconnect_clients_when_logon_hours_expire = 'Enabled'
             # 2.3.9.5 (L1) Ensure 'Microsoft network server: Server SPN target name validation level' is set to 'Accept if provided by client' or higher
             Microsoft_network_server_Server_SPN_target_name_validation_level = 'Accept if provided by client'
             #Microsoft_network_server_Server_SPN_target_name_validation_level = 'Required from client'
             # 2.3.10.1 (L1) Ensure 'Network access: Allow anonymous SID/Name translation' is set to 'Disabled'
-            Network_access_Allow_anonymous_SID_Name_translation = 'Disabled' 
+            Network_access_Allow_anonymous_SID_Name_translation = 'Disabled'
             # 2.3.10.2 (L1) Ensure 'Network access: Do not allow anonymous enumeration of SAM accounts' is set to 'Enabled'
             Network_access_Do_not_allow_anonymous_enumeration_of_SAM_accounts = 'Enabled'
             # 2.3.10.3 (L1) Ensure 'Network access: Do not allow anonymous enumeration of SAM accounts and shares' is set to 'Enabled'
             Network_access_Do_not_allow_anonymous_enumeration_of_SAM_accounts_and_shares = 'Enabled'
             # 2.3.10.4 (L2) Ensure 'Network access: Do not allow storage of passwords and credentials for network authentication' is set to 'Enabled'
-            Network_access_Do_not_allow_storage_of_passwords_and_credentials_for_network_authentication = 'Enabled' 
+            Network_access_Do_not_allow_storage_of_passwords_and_credentials_for_network_authentication = 'Enabled'
             # 2.3.10.5 (L1) Ensure 'Network access: Let Everyone permissions apply to anonymous users' is set to 'Disabled'
-            Network_access_Let_Everyone_permissions_apply_to_anonymous_users = 'Disabled' 
+            Network_access_Let_Everyone_permissions_apply_to_anonymous_users = 'Disabled'
             # 2.3.10.6 (L1) Configure 'Network access: Named Pipes that can be accessed anonymously'
             Network_access_Named_Pipes_that_can_be_accessed_anonymously = ''
-            # 2.3.10.7 (L1) Configure 'Network access: Remotely accessible registry paths' 
+            # 2.3.10.7 (L1) Configure 'Network access: Remotely accessible registry paths'
             # Commented out because of bug in SecurityPolicyDSC Module https://github.com/dsccommunity/SecurityPolicyDSC/issues/83
             #Network_access_Remotely_accessible_registry_paths = 'System\CurrentControlSet\Control\ProductOptions, System\CurrentControlSet\Control\Server Applications, SOFTWARE\Microsoft\Windows NT\CurrentVersion'
-            # 2.3.10.8 (L1) Configure 'Network access: Remotely accessible registry paths and sub-paths' 
+            # 2.3.10.8 (L1) Configure 'Network access: Remotely accessible registry paths and sub-paths'
             # Commented out because of bug in SecurityPolicyDSC Module https://github.com/dsccommunity/SecurityPolicyDSC/issues/83
             #Network_access_Remotely_accessible_registry_paths_and_subpaths = 'System\CurrentControlSet\Control\Print\Printers, System\CurrentControlSet\Services\Eventlog, Software\Microsoft\OLAP Server, Software\Microsoft\Windows NT\CurrentVersion\Print, Software\Microsoft\Windows NT\CurrentVersion\Windows, System\CurrentControlSet\Control\ContentIndex, System\CurrentControlSet\Control\Terminal Server, System\CurrentControlSet\Control\Terminal Server\UserConfig, System\CurrentControlSet\Control\Terminal Server\DefaultUserConfiguration, Software\Microsoft\Windows NT\CurrentVersion\Perflib, System\CurrentControlSet\Services\SysmonLog'
-            # 2.3.10.9 (L1) Ensure 'Network access: Restrict anonymous access to Named Pipes and Shares' is set to 'Enabled' 
-            Network_access_Restrict_anonymous_access_to_Named_Pipes_and_Shares = 'Enabled' 
+            # 2.3.10.9 (L1) Ensure 'Network access: Restrict anonymous access to Named Pipes and Shares' is set to 'Enabled'
+            Network_access_Restrict_anonymous_access_to_Named_Pipes_and_Shares = 'Enabled'
             # 2.3.10.10 (L1) Ensure 'Network access: Restrict clients allowed to make remote calls to SAM' is set to 'Administrators: Remote Access: Allow'
             Network_access_Restrict_clients_allowed_to_make_remote_calls_to_SAM = @(
                MSFT_RestrictedRemoteSamSecurityDescriptor
@@ -363,51 +363,51 @@ Configuration CIS_Windows10_v181 {
                   Identity   = 'Administrators'
                }
             )
-            # 2.3.10.11 (L1) Ensure 'Network access: Shares that can be accessed anonymously' is set to 'None' 
+            # 2.3.10.11 (L1) Ensure 'Network access: Shares that can be accessed anonymously' is set to 'None'
             Network_access_Shares_that_can_be_accessed_anonymously = ''
-            # 2.3.10.12 (L1) Ensure 'Network access: Sharing and security model for local accounts' is set to 'Classic - local users authenticate as themselves' 
+            # 2.3.10.12 (L1) Ensure 'Network access: Sharing and security model for local accounts' is set to 'Classic - local users authenticate as themselves'
             Network_access_Sharing_and_security_model_for_local_accounts = 'Classic - local users authenticate as themselves'
-            # 2.3.11.1 (L1) Ensure 'Network security: Allow Local System to use computer identity for NTLM' is set to 'Enabled' 
+            # 2.3.11.1 (L1) Ensure 'Network security: Allow Local System to use computer identity for NTLM' is set to 'Enabled'
             Network_security_Allow_Local_System_to_use_computer_identity_for_NTLM = 'Enabled'
-            # 2.3.11.2 (L1) Ensure 'Network security: Allow LocalSystem NULL session fallback' is set to 'Disabled' 
+            # 2.3.11.2 (L1) Ensure 'Network security: Allow LocalSystem NULL session fallback' is set to 'Disabled'
             Network_security_Allow_LocalSystem_NULL_session_fallback = 'Disabled'
-            # 2.3.11.3 (L1) Ensure 'Network Security: Allow PKU2U authentication requests to this computer to use online identities' is set to 'Disabled' 
+            # 2.3.11.3 (L1) Ensure 'Network Security: Allow PKU2U authentication requests to this computer to use online identities' is set to 'Disabled'
             Network_security_Allow_PKU2U_authentication_requests_to_this_computer_to_use_online_identities = 'Disabled'
-            # 2.3.11.4 (L1) Ensure 'Network security: Configure encryption types allowed for Kerberos' is set to 'AES128_HMAC_SHA1, AES256_HMAC_SHA1, Future encryption types' 
+            # 2.3.11.4 (L1) Ensure 'Network security: Configure encryption types allowed for Kerberos' is set to 'AES128_HMAC_SHA1, AES256_HMAC_SHA1, Future encryption types'
             Network_security_Configure_encryption_types_allowed_for_Kerberos = 'AES128_HMAC_SHA1','AES256_HMAC_SHA1','FUTURE'
-            # 2.3.11.5 (L1) Ensure 'Network security: Do not store LAN Manager hash value on next password change' is set to 'Enabled' 
+            # 2.3.11.5 (L1) Ensure 'Network security: Do not store LAN Manager hash value on next password change' is set to 'Enabled'
             Network_security_Do_not_store_LAN_Manager_hash_value_on_next_password_change = 'Enabled'
-            # 2.3.11.6 (L1) Ensure 'Network security: Force logoff when logon hours expire' is set to 'Enabled' 
+            # 2.3.11.6 (L1) Ensure 'Network security: Force logoff when logon hours expire' is set to 'Enabled'
             Network_security_Force_logoff_when_logon_hours_expire = 'Enabled'
             # 2.3.11.7 (L1) Ensure 'Network security: LAN Manager authentication level' is set to 'Send NTLMv2 response only. Refuse LM & NTLM'
-            Network_security_LAN_Manager_authentication_level = 'Send NTLMv2 responses only. Refuse LM & NTLM' 
+            Network_security_LAN_Manager_authentication_level = 'Send NTLMv2 responses only. Refuse LM & NTLM'
             # 2.3.11.8 (L1) Ensure 'Network security: LDAP client signing requirements' is set to 'Negotiate signing' or higher
-            Network_security_LDAP_client_signing_requirements = 'Negotiate signing' 
-            # 2.3.11.9 (L1) Ensure 'Network security: Minimum session security for NTLM SSP based (including secure RPC) clients' is set to 'Require NTLMv2 session security, Require 128-bit encryption' 
+            Network_security_LDAP_client_signing_requirements = 'Negotiate signing'
+            # 2.3.11.9 (L1) Ensure 'Network security: Minimum session security for NTLM SSP based (including secure RPC) clients' is set to 'Require NTLMv2 session security, Require 128-bit encryption'
             Network_security_Minimum_session_security_for_NTLM_SSP_based_including_secure_RPC_clients = 'Both options checked'
-            # 2.3.11.10 (L1) Ensure 'Network security: Minimum session security for NTLM SSP based (including secure RPC) servers' is set to 'Require NTLMv2 session security, Require 128-bit encryption' 
-            Network_security_Minimum_session_security_for_NTLM_SSP_based_including_secure_RPC_servers = 'Both options checked' 
+            # 2.3.11.10 (L1) Ensure 'Network security: Minimum session security for NTLM SSP based (including secure RPC) servers' is set to 'Require NTLMv2 session security, Require 128-bit encryption'
+            Network_security_Minimum_session_security_for_NTLM_SSP_based_including_secure_RPC_servers = 'Both options checked'
             # 2.3.13.1 (L1) Ensure 'Shutdown: Allow system to be shut down without having to log on' is set to 'Disabled'
-            Shutdown_Allow_system_to_be_shut_down_without_having_to_log_on = 'Disabled' 
+            Shutdown_Allow_system_to_be_shut_down_without_having_to_log_on = 'Disabled'
             # 2.3.14.1 (L2) Ensure 'System cryptography: Force strong key protection for user keys stored on the computer' is set to 'User is prompted when the key is first used' or higher
             System_cryptography_Force_strong_key_protection_for_user_keys_stored_on_the_computer = 'User is prompted when the key is first used'
             # 2.3.15.1 (L1) Ensure 'System objects: Require case insensitivity for non-Windows subsystems' is set to 'Enabled'
-            System_objects_Require_case_insensitivity_for_non_Windows_subsystems = 'Enabled' 
+            System_objects_Require_case_insensitivity_for_non_Windows_subsystems = 'Enabled'
             # 2.3.15.2 (L1) Ensure 'System objects: Strengthen default permissions of internal system objects (e.g. Symbolic Links)' is set to 'Enabled'
-            System_objects_Strengthen_default_permissions_of_internal_system_objects_eg_Symbolic_Links = 'Enabled' 
-            # 2.3.17.1 (L1) Ensure 'User Account Control: Admin Approval Mode for the Built-in Administrator account' is set to 'Enabled' 
+            System_objects_Strengthen_default_permissions_of_internal_system_objects_eg_Symbolic_Links = 'Enabled'
+            # 2.3.17.1 (L1) Ensure 'User Account Control: Admin Approval Mode for the Built-in Administrator account' is set to 'Enabled'
             User_Account_Control_Admin_Approval_Mode_for_the_Built_in_Administrator_account = 'Enabled'
-            # 2.3.17.2 (L1) Ensure 'User Account Control: Behavior of the elevation prompt for administrators in Admin Approval Mode' is set to 'Prompt for consent on the secure desktop' 
+            # 2.3.17.2 (L1) Ensure 'User Account Control: Behavior of the elevation prompt for administrators in Admin Approval Mode' is set to 'Prompt for consent on the secure desktop'
             User_Account_Control_Behavior_of_the_elevation_prompt_for_administrators_in_Admin_Approval_Mode = 'Prompt for consent on the secure desktop'
-            # 2.3.17.3 (L1) Ensure 'User Account Control: Behavior of the elevation prompt for standard users' is set to 'Automatically deny elevation requests' 
+            # 2.3.17.3 (L1) Ensure 'User Account Control: Behavior of the elevation prompt for standard users' is set to 'Automatically deny elevation requests'
             User_Account_Control_Behavior_of_the_elevation_prompt_for_standard_users = 'Automatically deny elevation request'
-            # 2.3.17.4 (L1) Ensure 'User Account Control: Detect application installations and prompt for elevation' is set to 'Enabled' 
+            # 2.3.17.4 (L1) Ensure 'User Account Control: Detect application installations and prompt for elevation' is set to 'Enabled'
             User_Account_Control_Detect_application_installations_and_prompt_for_elevation = 'Enabled'
-            # 2.3.17.5 (L1) Ensure 'User Account Control: Only elevate UIAccess applications that are installed in secure locations' is set to 'Enabled' 
+            # 2.3.17.5 (L1) Ensure 'User Account Control: Only elevate UIAccess applications that are installed in secure locations' is set to 'Enabled'
             User_Account_Control_Only_elevate_UIAccess_applications_that_are_installed_in_secure_locations = 'Enabled'
             # 2.3.17.6 (L1) Ensure 'User Account Control: Run all administrators in Admin Approval Mode' is set to 'Enabled'
             User_Account_Control_Run_all_administrators_in_Admin_Approval_Mode = 'Enabled'
-            # 2.3.17.7 (L1) Ensure 'User Account Control: Switch to the secure desktop when prompting for elevation' is set to 'Enabled' 
+            # 2.3.17.7 (L1) Ensure 'User Account Control: Switch to the secure desktop when prompting for elevation' is set to 'Enabled'
             User_Account_Control_Switch_to_the_secure_desktop_when_prompting_for_elevation = 'Enabled'
             # 2.3.17.8 (L1) Ensure 'User Account Control: Virtualize file and registry write failures to per-user locations' is set to 'Enabled'
             User_Account_Control_Virtualize_file_and_registry_write_failures_to_per_user_locations = 'Enabled'
@@ -430,7 +430,7 @@ Configuration CIS_Windows10_v181 {
             ValueType   = 'DWord'
             ValueData   = '4'
         }
-        
+
         # 5.3 (L1) Ensure 'Computer Browser (Browser)' is set to 'Disabled' or 'Not Installed'
         Registry 'Browser' {
             Ensure      = 'Present'
@@ -456,8 +456,8 @@ Configuration CIS_Windows10_v181 {
             ValueName   = 'Start'
             ValueType   = 'DWord'
             ValueData   = '4'
-        }  
-        
+        }
+
         # 5.6 (L1) Ensure 'IIS Admin Service (IISADMIN)' is set to 'Disabled' or 'Not Installed'
         Registry 'IISADMIN' {
             Ensure      = 'Present'
@@ -465,8 +465,8 @@ Configuration CIS_Windows10_v181 {
             ValueName   = 'Start'
             ValueType   = 'DWord'
             ValueData   = '4'
-        }    
-        
+        }
+
         # 5.7 (L1) Ensure 'Infrared monitor service (irmon)' is set to 'Disabled' or 'Not Installed'
         Registry 'irmon' {
             Ensure      = 'Present'
@@ -474,8 +474,8 @@ Configuration CIS_Windows10_v181 {
             ValueName   = 'Start'
             ValueType   = 'DWord'
             ValueData   = '4'
-        }  
-        
+        }
+
         # 5.8 (L1) Ensure 'Internet Connection Sharing (ICS) (SharedAccess)' is set to 'Disabled'
         Registry 'SharedAccess' {
             Ensure      = 'Present'
@@ -483,7 +483,7 @@ Configuration CIS_Windows10_v181 {
             ValueName   = 'Start'
             ValueType   = 'DWord'
             ValueData   = '4'
-        }  
+        }
 
         # 5.9 (L2) Ensure 'Link-Layer Topology Discovery Mapper (lltdsvc)' is set to 'Disabled'
         Registry 'lltdsvc' {
@@ -492,7 +492,7 @@ Configuration CIS_Windows10_v181 {
             ValueName   = 'Start'
             ValueType   = 'DWord'
             ValueData   = '4'
-        } 
+        }
 
         # 5.10 (L1) Ensure 'LxssManager (LxssManager)' is set to 'Disabled' or 'Not Installed'
         Registry 'LxssManager' {
@@ -501,7 +501,7 @@ Configuration CIS_Windows10_v181 {
             ValueName   = 'Start'
             ValueType   = 'DWord'
             ValueData   = '4'
-        } 
+        }
 
         # 5.11 (L1) Ensure 'Microsoft FTP Service (FTPSVC)' is set to 'Disabled' or 'Not Installed'
         Registry 'FTPSVC' {
@@ -510,7 +510,7 @@ Configuration CIS_Windows10_v181 {
             ValueName   = 'Start'
             ValueType   = 'DWord'
             ValueData   = '4'
-        } 
+        }
 
         # 5.12 (L2) Ensure 'Microsoft iSCSI Initiator Service (MSiSCSI)' is set to 'Disabled'
         Registry 'MSiSCSI' {
@@ -519,7 +519,7 @@ Configuration CIS_Windows10_v181 {
             ValueName   = 'Start'
             ValueType   = 'DWord'
             ValueData   = '4'
-        } 
+        }
 
         # 5.13 (L2) Ensure 'Microsoft Store Install Service (InstallService)' is set to 'Disabled'
         Registry 'InstallService' {
@@ -528,8 +528,8 @@ Configuration CIS_Windows10_v181 {
             ValueName   = 'Start'
             ValueType   = 'DWord'
             ValueData   = '4'
-        }   
-        
+        }
+
         # 5.14 (L1) Ensure 'OpenSSH SSH Server (sshd)' is set to 'Disabled' or 'Not Installed'
         Registry 'sshd' {
             Ensure      = 'Present'
@@ -537,7 +537,7 @@ Configuration CIS_Windows10_v181 {
             ValueName   = 'Start'
             ValueType   = 'DWord'
             ValueData   = '4'
-        }   
+        }
 
         # 5.15 (L2) Ensure 'Peer Name Resolution Protocol (PNRPsvc)' is set to 'Disabled'
         Registry 'PNRPsvc' {
@@ -546,7 +546,7 @@ Configuration CIS_Windows10_v181 {
             ValueName   = 'Start'
             ValueType   = 'DWord'
             ValueData   = '4'
-        }  
+        }
 
         # 5.16 (L2) Ensure 'Peer Networking Grouping (p2psvc)' is set to 'Disabled'
         Registry 'p2psvc' {
@@ -555,7 +555,7 @@ Configuration CIS_Windows10_v181 {
             ValueName   = 'Start'
             ValueType   = 'DWord'
             ValueData   = '4'
-        } 
+        }
 
         # 5.17 (L2) Ensure 'Peer Networking Identity Manager (p2pimsvc)' is set to 'Disabled'
         Registry 'p2pimsvc' {
@@ -564,7 +564,7 @@ Configuration CIS_Windows10_v181 {
             ValueName   = 'Start'
             ValueType   = 'DWord'
             ValueData   = '4'
-        } 
+        }
 
         # 5.18 (L2) Ensure 'PNRP Machine Name Publication Service (PNRPAutoReg)' is set to 'Disabled'
         Registry 'PNRPAutoReg' {
@@ -573,7 +573,7 @@ Configuration CIS_Windows10_v181 {
             ValueName   = 'Start'
             ValueType   = 'DWord'
             ValueData   = '4'
-        } 
+        }
 
         # 5.19 (L2) Ensure 'Problem Reports and Solutions Control Panel Support (wercplsupport)' is set to 'Disabled'
         Registry 'wercplsupport' {
@@ -582,7 +582,7 @@ Configuration CIS_Windows10_v181 {
             ValueName   = 'Start'
             ValueType   = 'DWord'
             ValueData   = '4'
-        } 
+        }
 
         # 5.20 (L2) Ensure 'Remote Access Auto Connection Manager (RasAuto)' is set to 'Disabled'
         Registry 'RasAuto' {
@@ -591,7 +591,7 @@ Configuration CIS_Windows10_v181 {
             ValueName   = 'Start'
             ValueType   = 'DWord'
             ValueData   = '4'
-        } 
+        }
 
         # 5.21 (L2) Ensure 'Remote Desktop Configuration (SessionEnv)' is set to 'Disabled'
         Registry 'SessionEnv' {
@@ -600,7 +600,7 @@ Configuration CIS_Windows10_v181 {
             ValueName   = 'Start'
             ValueType   = 'DWord'
             ValueData   = '4'
-        } 
+        }
 
         # 5.22 (L2) Ensure 'Remote Desktop Services (TermService)' is set to 'Disabled'
         Registry 'TermService' {
@@ -609,7 +609,7 @@ Configuration CIS_Windows10_v181 {
             ValueName   = 'Start'
             ValueType   = 'DWord'
             ValueData   = '4'
-        } 
+        }
 
         # 5.23 (L2) Ensure 'Remote Desktop Services UserMode Port Redirector (UmRdpService)' is set to 'Disabled'
         Registry 'UmRdpService' {
@@ -618,7 +618,7 @@ Configuration CIS_Windows10_v181 {
             ValueName   = 'Start'
             ValueType   = 'DWord'
             ValueData   = '4'
-        } 
+        }
 
         # 5.24 (L1) Ensure 'Remote Procedure Call (RPC) Locator (RpcLocator)' is set to 'Disabled'
         Registry 'RpcLocator' {
@@ -627,7 +627,7 @@ Configuration CIS_Windows10_v181 {
             ValueName   = 'Start'
             ValueType   = 'DWord'
             ValueData   = '4'
-        } 
+        }
 
         # 5.25 (L2) Ensure 'Remote Registry (RemoteRegistry)' is set to 'Disabled'
         Registry 'RemoteRegistry' {
@@ -636,7 +636,7 @@ Configuration CIS_Windows10_v181 {
             ValueName   = 'Start'
             ValueType   = 'DWord'
             ValueData   = '4'
-        } 
+        }
 
         # 5.26 (L1) Ensure 'Routing and Remote Access (RemoteAccess)' is set to 'Disabled'
         Registry 'RemoteAccess' {
@@ -645,7 +645,7 @@ Configuration CIS_Windows10_v181 {
             ValueName   = 'Start'
             ValueType   = 'DWord'
             ValueData   = '4'
-        } 
+        }
 
         # 5.27 (L2) Ensure 'Server (LanmanServer)' is set to 'Disabled'
         Registry 'LanmanServer' {
@@ -654,7 +654,7 @@ Configuration CIS_Windows10_v181 {
             ValueName   = 'Start'
             ValueType   = 'DWord'
             ValueData   = '4'
-        } 
+        }
 
         # 5.28 (L1) Ensure 'Simple TCP/IP Services (simptcp)' is set to 'Disabled' or 'Not Installed'
         Registry 'simptcp' {
@@ -663,7 +663,7 @@ Configuration CIS_Windows10_v181 {
             ValueName   = 'Start'
             ValueType   = 'DWord'
             ValueData   = '4'
-        } 
+        }
 
         # 5.29 (L2) Ensure 'SNMP Service (SNMP)' is set to 'Disabled' or 'Not Installed'
         Registry 'SNMP' {
@@ -672,7 +672,7 @@ Configuration CIS_Windows10_v181 {
             ValueName   = 'Start'
             ValueType   = 'DWord'
             ValueData   = '4'
-        } 
+        }
 
         # 5.30 (L1) Ensure 'SSDP Discovery (SSDPSRV)' is set to 'Disabled'
         Registry 'SSDPSRV' {
@@ -681,7 +681,7 @@ Configuration CIS_Windows10_v181 {
             ValueName   = 'Start'
             ValueType   = 'DWord'
             ValueData   = '4'
-        } 
+        }
 
         # 5.31 (L1) Ensure 'UPnP Device Host (upnphost)' is set to 'Disabled'
         Registry 'upnphost' {
@@ -690,7 +690,7 @@ Configuration CIS_Windows10_v181 {
             ValueName   = 'Start'
             ValueType   = 'DWord'
             ValueData   = '4'
-        }         
+        }
 
         # 5.32 (L1) Ensure 'Web Management Service (WMSvc)' is set to 'Disabled' or 'Not Installed'
         Registry 'WMSvc' {
@@ -699,7 +699,7 @@ Configuration CIS_Windows10_v181 {
             ValueName   = 'Start'
             ValueType   = 'DWord'
             ValueData   = '4'
-        }   
+        }
 
         # 5.33 (L2) Ensure 'Windows Error Reporting Service (WerSvc)' is set to 'Disabled'
         Registry 'WerSvc' {
@@ -708,7 +708,7 @@ Configuration CIS_Windows10_v181 {
             ValueName   = 'Start'
             ValueType   = 'DWord'
             ValueData   = '4'
-        }  
+        }
 
         # 5.34 (L2) Ensure 'Windows Event Collector (Wecsvc)' is set to 'Disabled'
         Registry 'Wecsvc' {
@@ -717,7 +717,7 @@ Configuration CIS_Windows10_v181 {
             ValueName   = 'Start'
             ValueType   = 'DWord'
             ValueData   = '4'
-        }  
+        }
 
         # 5.35 (L1) Ensure 'Windows Media Player Network Sharing Service (WMPNetworkSvc)' is set to 'Disabled' or 'Not Installed'
         Registry 'WMPNetworkSvc' {
@@ -726,7 +726,7 @@ Configuration CIS_Windows10_v181 {
             ValueName   = 'Start'
             ValueType   = 'DWord'
             ValueData   = '4'
-        }  
+        }
 
         # 5.36 (L1) Ensure 'Windows Mobile Hotspot Service (icssvc)' is set to 'Disabled'
         Registry 'icssvc' {
@@ -735,7 +735,7 @@ Configuration CIS_Windows10_v181 {
             ValueName   = 'Start'
             ValueType   = 'DWord'
             ValueData   = '4'
-        }  
+        }
 
         # 5.37 (L2) Ensure 'Windows Push Notifications System Service (WpnService)' is set to 'Disabled'
         Registry 'WpnService' {
@@ -744,7 +744,7 @@ Configuration CIS_Windows10_v181 {
             ValueName   = 'Start'
             ValueType   = 'DWord'
             ValueData   = '4'
-        }  
+        }
 
         # 5.38 (L2) Ensure 'Windows PushToInstall Service (PushToInstall)' is set to 'Disabled'
         Registry 'PushToInstall' {
@@ -753,8 +753,8 @@ Configuration CIS_Windows10_v181 {
             ValueName   = 'Start'
             ValueType   = 'DWord'
             ValueData   = '4'
-        } 
-        
+        }
+
         # 5.39 (L2) Ensure 'Windows Remote Management (WS-Management) (WinRM)' is set to 'Disabled'
         Registry 'WinRM' {
             Ensure      = 'Present'
@@ -762,7 +762,7 @@ Configuration CIS_Windows10_v181 {
             ValueName   = 'Start'
             ValueType   = 'DWord'
             ValueData   = '4'
-        } 
+        }
 
         # 5.40 (L1) Ensure 'World Wide Web Publishing Service (W3SVC)' is set to 'Disabled' or 'Not Installed'
         Registry 'W3SVC' {
@@ -771,7 +771,7 @@ Configuration CIS_Windows10_v181 {
             ValueName   = 'Start'
             ValueType   = 'DWord'
             ValueData   = '4'
-        } 
+        }
 
         # 5.41 (L1) Ensure 'Xbox Accessory Management Service (XboxGipSvc)' is set to 'Disabled'
         Registry 'XboxGipSvc' {
@@ -780,7 +780,7 @@ Configuration CIS_Windows10_v181 {
             ValueName   = 'Start'
             ValueType   = 'DWord'
             ValueData   = '4'
-        } 
+        }
 
         # 5.42 (L1) Ensure 'Xbox Live Auth Manager (XblAuthManager)' is set to 'Disabled'
         Registry 'XblAuthManager' {
@@ -789,7 +789,7 @@ Configuration CIS_Windows10_v181 {
             ValueName   = 'Start'
             ValueType   = 'DWord'
             ValueData   = '4'
-        } 
+        }
 
         # 5.43 (L1) Ensure 'Xbox Live Game Save (XblGameSave)' is set to 'Disabled'
         Registry 'XblGameSave' {
@@ -798,8 +798,8 @@ Configuration CIS_Windows10_v181 {
             ValueName   = 'Start'
             ValueType   = 'DWord'
             ValueData   = '4'
-        }   
-        
+        }
+
         # 5.44 (L1) Ensure 'Xbox Live Networking Service (XboxNetApiSvc)' is set to 'Disabled'
         Registry 'XboxNetApiSvc' {
             Ensure      = 'Present'
@@ -807,7 +807,7 @@ Configuration CIS_Windows10_v181 {
             ValueName   = 'Start'
             ValueType   = 'DWord'
             ValueData   = '4'
-        } 
+        }
 
         # 9.1.1 (L1) Ensure 'Windows Firewall: Domain: Firewall state' is set to 'On (recommended)'
         Registry 'EnableFirewallDomain' {
@@ -1068,7 +1068,7 @@ Configuration CIS_Windows10_v181 {
 
         AuditPolicySubcategory 'Audit Application Group Management (Failure)'
         {
-            Name      = 'Application Group Management'    
+            Name      = 'Application Group Management'
             Ensure    = 'Present'
             AuditFlag = 'Failure'
         }
@@ -1099,7 +1099,7 @@ Configuration CIS_Windows10_v181 {
             AuditFlag = 'Success'
         }
 
-        # 17.3.1 (L1) Ensure 'Audit PNP Activity' is set to 'Success' 
+        # 17.3.1 (L1) Ensure 'Audit PNP Activity' is set to 'Success'
         AuditPolicySubcategory 'Audit PNP Activity (Success)' {
             Name      = 'Plug and Play Events'
             Ensure    = 'Present'
@@ -1215,7 +1215,7 @@ Configuration CIS_Windows10_v181 {
             Ensure    = 'Present'
             AuditFlag = 'Failure'
         }
-        
+
         # 17.6.2 (L1) Ensure 'Audit  File Share' is set to 'Success and Failure'
         AuditPolicySubcategory 'Audit File Share (Success)' {
             Name      = 'File Share'
@@ -1402,9 +1402,9 @@ Configuration CIS_Windows10_v181 {
         Registry 'NoLockScreenCamera' {
             Ensure      = 'Present'
             Key         = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Personalization'
-            ValueName   = 'NoLockScreenCamera' 
-            ValueType   = 'DWord' 
-            ValueData   = '1' 
+            ValueName   = 'NoLockScreenCamera'
+            ValueType   = 'DWord'
+            ValueData   = '1'
         }
 
         # 18.1.1.2 (L1) Ensure 'Prevent enabling lock screen slide show' is set to 'Enabled'
@@ -1451,7 +1451,7 @@ Configuration CIS_Windows10_v181 {
             ValueType    = 'DWord'
             ValueData    = '1'
         }
-        
+
         # 18.2.4 (L1) Ensure 'Password Settings: Password Complexity' is set to 'Enabled: Large letters + small letters + numbers + special characters'
         Registry 'PasswordComplexity' {
             Ensure       = 'Present'
@@ -1523,7 +1523,7 @@ Configuration CIS_Windows10_v181 {
             ValueType    = 'DWord'
             ValueData    = '2'
         }
-        
+
         # 18.3.6 (L1) Ensure 'WDigest Authentication' is set to 'Disabled'
         Registry 'UseLogonCredential' {
             Ensure       = 'Present'
@@ -1685,7 +1685,7 @@ Configuration CIS_Windows10_v181 {
             ValueType    = 'DWord'
             ValueData    = '0'
         }
-     
+
         # 18.5.9.1 (L2) Ensure 'Turn on Mapper I/O (LLTDIO) driver' is set to 'Disabled'
         Registry 'AllowLLTDIOOnPublicNet' {
             Ensure       = 'Present'
@@ -1694,7 +1694,7 @@ Configuration CIS_Windows10_v181 {
             ValueType    = 'DWord'
             ValueData    = '0'
         }
-        
+
         # 18.5.9.1 (L2) Ensure 'Turn on Mapper I/O (LLTDIO) driver' is set to 'Disabled'
         Registry 'EnableLLTDIO' {
             Ensure       = 'Present'
@@ -1703,7 +1703,7 @@ Configuration CIS_Windows10_v181 {
             ValueType    = 'DWord'
             ValueData    = '0'
         }
-        
+
         # 18.5.9.1 (L2) Ensure 'Turn on Mapper I/O (LLTDIO) driver' is set to 'Disabled'
         Registry 'ProhibitLLTDIOOnPrivateNet' {
             Ensure       = 'Present'
@@ -1856,7 +1856,7 @@ Configuration CIS_Windows10_v181 {
             ValueType    = 'DWord'
             ValueData    = '0'
         }
-        
+
         # 18.5.20.2 (L2) Ensure 'Prohibit access of the Windows Connect Nowwizards' is set to 'Enabled'
         Registry 'DisableWcnUi' {
             Ensure       = 'Present'
@@ -1874,7 +1874,7 @@ Configuration CIS_Windows10_v181 {
             ValueType  = 'DWord'
             ValueData  = '1'
         }
-        
+
         # 18.5.21.2 (L2) Ensure 'Prohibit connection to non-domain networks when connected to domain authenticated network' is set to 'Enabled'
         Registry 'fBlockNonDomain' {
             Ensure     = 'Present'
@@ -1884,7 +1884,7 @@ Configuration CIS_Windows10_v181 {
             ValueData  = '1'
         }
 
-        # 18.5.23.2.1 (L1) Ensure 'Allow Windows to automatically connect to suggested open hotspots, to networks shared by contacts, and to hotspots offering paid services' is set to 'Disabled'  
+        # 18.5.23.2.1 (L1) Ensure 'Allow Windows to automatically connect to suggested open hotspots, to networks shared by contacts, and to hotspots offering paid services' is set to 'Disabled'
         Registry 'AutoConnectAllowedOEM' {
             Ensure     = 'Present'
             Key        = 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WcmSvc\wifinetworkmanager\config'
@@ -1896,7 +1896,7 @@ Configuration CIS_Windows10_v181 {
         # 18.7.1.1 (L2) Ensure 'Turn off notifications network usage' is set to 'Enabled'
         Registry 'notificationsnetworkusage' {
             Ensure     = 'Present'
-            Key        = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\CurrentVersion\PushNotifications'
+            Key        = 'HHKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\CurrentVersion\PushNotifications'
             ValueName  = 'NoCloudApplicationNotification'
             ValueType  = 'DWord'
             ValueData  = '1'
@@ -2260,7 +2260,7 @@ Configuration CIS_Windows10_v181 {
             ValueName  = 'DeviceEnumerationPolicy'
             ValueType  = 'DWord'
             ValueData  = '0'
-        }       
+        }
 
         # 18.8.27.1 (L2) Ensure 'Disallow copying of user input methods to the system account for sign-in' is set to 'Enabled'
         Registry 'BlockUserInputMethodsForSignIn' {
@@ -2270,7 +2270,7 @@ Configuration CIS_Windows10_v181 {
             ValueType  = 'DWord'
             ValueData  = '1'
         }
-        
+
         # 18.8.28.1 (L1) Ensure 'Block user from showing account details on signin' is set to 'Enabled'
         Registry 'BlockUserFromShowingAccountDetailsOnSignin' {
             Ensure     = 'Present'
@@ -2351,7 +2351,7 @@ Configuration CIS_Windows10_v181 {
             ValueType  = 'DWord'
             ValueData  = '0'
         }
-        
+
         # 18.8.31.2 (L2) Ensure 'Allow upload of User Activities' is set to 'Disabled'
         Registry 'UploadUserActivities' {
             Ensure     = 'Present'
@@ -2737,8 +2737,8 @@ Configuration CIS_Windows10_v181 {
             ValueName  = 'RequirePinForPairing'
             ValueType  = 'DWord'
             ValueData  = '1'
-        }       
-        
+        }
+
         # 18.9.15.1 (L1) Ensure 'Do not display the password reveal button' is set to 'Enabled'
         Registry 'DisablePasswordReveal' {
             Ensure      = 'Present'
@@ -3143,7 +3143,7 @@ Configuration CIS_Windows10_v181 {
         ValueType  = 'DWord'
         ValueData  = '2'
         }
-        
+
         # 18.9.59.3.9.4 (L1) Ensure 'Require user authentication for remote connections by using Network Level Authentication' is set to 'Enabled'
         Registry 'UserAuthentication' {
         Ensure     = 'Present'
@@ -3484,7 +3484,7 @@ Configuration CIS_Windows10_v181 {
             ValueName  = 'AllowPersistence'
             ValueType  = 'DWord'
             ValueData  = '0'
-        }       
+        }
 
         # 18.9.78.4 (NG) Ensure 'Allow files to download and save to the host operating system from Windows Defender Application Guard' is set to 'Disabled'
         Registry 'SaveFilesToHost' {
@@ -3493,7 +3493,7 @@ Configuration CIS_Windows10_v181 {
             ValueName  = 'SaveFilesToHost'
             ValueType  = 'DWord'
             ValueData  = '0'
-        }  
+        }
 
         # 18.9.78.5 (NG) Ensure 'Allow users to trust files that open in Windows Defender Application Guard' is set to 'Enabled: 0 (Do not allow users to manually trust files)' OR '2 (Allow users to manually trust after an antivirus check)'
         Registry 'FileTrustCriteria' {
@@ -3502,7 +3502,7 @@ Configuration CIS_Windows10_v181 {
             ValueName  = 'FileTrustCriteria'
             ValueType  = 'DWord'
             ValueData  = '2'
-        }  
+        }
 
         # 18.9.78.6 (NG) Ensure 'Configure Windows Defender Application Guard clipboard settings: Clipboard behavior setting' is set to 'Enabled: Enable clipboard operation from an isolated session to the host'
         Registry 'AppHVSIClipboardSettings' {
@@ -3511,7 +3511,7 @@ Configuration CIS_Windows10_v181 {
             ValueName  = 'AppHVSIClipboardSettings'
             ValueType  = 'DWord'
             ValueData  = '1'
-        }  
+        }
 
         # 18.9.78.7 (NG) Ensure 'Turn on Windows Defender Application Guard in Enterprise Mode' is set to 'Enabled: 1'
         Registry 'AllowAppHVSI_ProviderSet' {
@@ -3538,7 +3538,7 @@ Configuration CIS_Windows10_v181 {
             ValueName  = 'ShellSmartScreenLevel'
             ValueType  = 'String'
             ValueData  = 'Block'
-        }    
+        }
 
         # 18.9.80.2.1 (L1) Ensure 'Configure Windows Defender SmartScreen' is set to 'Enabled'
         Registry 'EnabledV9' {
@@ -3547,7 +3547,7 @@ Configuration CIS_Windows10_v181 {
             ValueName  = 'EnabledV9'
             ValueType  = 'DWord'
             ValueData  = '1'
-        }   
+        }
 
         # 18.9.80.2.2 (L1) Ensure 'Prevent bypassing Windows Defender SmartScreen prompts for files' is set to 'Enabled'
         Registry 'PreventOverrideAppRepUnknown' {
@@ -3556,7 +3556,7 @@ Configuration CIS_Windows10_v181 {
             ValueName  = 'PreventOverrideAppRepUnknown'
             ValueType  = 'DWord'
             ValueData  = '1'
-        }  
+        }
 
         # 18.9.82.1 (L1) Ensure 'Enables or disables Windows Game Recording and Broadcasting' is set to 'Disabled'
         Registry 'AllowGameDVR' {
@@ -3565,7 +3565,7 @@ Configuration CIS_Windows10_v181 {
             ValueName  = 'AllowGameDVR'
             ValueType  = 'DWord'
             ValueData  = '0'
-        }  
+        }
 
         # 18.9.80.2.3 (L1) Ensure 'Prevent bypassing Windows Defender SmartScreen prompts for sites' is set to 'Enabled'
         Registry 'PreventOverride' {
@@ -3574,7 +3574,7 @@ Configuration CIS_Windows10_v181 {
             ValueName  = 'PreventOverride'
             ValueType  = 'DWord'
             ValueData  = '1'
-        }  
+        }
 
         # 18.9.84.1 (L2) Ensure 'Allow suggested apps in Windows Ink Workspace' is set to 'Disabled'
         Registry 'AllowSuggestedAppsInWindowsInkWorkspace' {
@@ -3819,7 +3819,7 @@ Configuration CIS_Windows10_v181 {
             ValueType  = 'DWord'
             ValueData  = '0'
         }
- 
+
         # 18.9.102.5 (L1) Ensure 'Remove access to “Pause updates” feature' is set to 'Enabled'
         Registry 'SetDisablePauseUXAccess' {
             Ensure     = 'Present'
