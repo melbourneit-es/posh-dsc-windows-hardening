@@ -15,6 +15,13 @@ Configuration CIS_WindowsServer2019_v110
 
    Node $NodeName
    {
+      User LocalAdministratorExpiry
+      {
+         Ensure               = "Present"
+         UserName             = "Administrator"
+         PasswordNeverExpires = $true
+      }
+
       #Source: https://github.com/PowerShell/SecurityPolicyDsc/blob/dev/Examples/Resources/AccountPolicy/1-AccountPolicy_Config.ps1
       AccountPolicy AccountPolicies
       {
