@@ -1,8 +1,11 @@
 # Configuration Definition
-Configuration CIS_WindowsServer2019_v110 {
+Configuration CIS_WindowsServer2019_v110
+{
    param (
       [string[]]$NodeName = 'localhost',
-      [string]$Accounts_Administrator_account_status = 'Enabled'
+      [bool]$isCloudServer = $true,
+      [bool]$isIisServer = $false,
+      [bool]$isDomainJoined = $false
    )
 
 
@@ -10,7 +13,8 @@ Configuration CIS_WindowsServer2019_v110 {
    Import-DscResource -ModuleName 'AuditPolicyDsc'
    Import-DscResource -ModuleName 'SecurityPolicyDsc'
 
-   Node $NodeName {
+   Node $NodeName
+   {
       #Source: https://github.com/PowerShell/SecurityPolicyDsc/blob/dev/Examples/Resources/AccountPolicy/1-AccountPolicy_Config.ps1
       AccountPolicy AccountPolicies
       {
@@ -36,13 +40,15 @@ Configuration CIS_WindowsServer2019_v110 {
       }
 
       #  2.2.1 (L1) Ensure 'Access Credential Manager as a trusted caller' is set to 'No One'
-      UserRightsAssignment AccessCredentialManagerasatrustedcaller {
+      UserRightsAssignment AccessCredentialManagerasatrustedcaller
+      {
          Policy   = 'Access_Credential_Manager_as_a_trusted_caller'
          Identity = ''
       }
 
       #  2.2.2 (L1) Ensure 'Access this computer from the network' is set to 'Administrators, Authenticated Users, ENTERPRISE DOMAIN CONTROLLERS' (DC only)
-      UserRightsAssignment Accessthiscomputerfromthenetwork {
+      UserRightsAssignment Accessthiscomputerfromthenetwork
+      {
          Policy   = 'Access_this_computer_from_the_network'
          Identity = 'Administrators, Authenticated Users, ENTERPRISE DOMAIN CONTROLLERS'
       }
@@ -56,31 +62,36 @@ Configuration CIS_WindowsServer2019_v110 {
 
 
       #  2.2.4 (L1) Ensure 'Act as part of the operating system' is set to 'No One'
-      UserRightsAssignment Actaspartoftheoperatingsystem {
+      UserRightsAssignment Actaspartoftheoperatingsystem
+      {
          Policy   = 'Act_as_part_of_the_operating_system'
          Identity = ''
       }
 
       #  2.2.5 (L1) Ensure 'Add workstations to domain' is set to 'Administrators' (DC only)
-      UserRightsAssignment Addworkstationstodomain {
+      UserRightsAssignment Addworkstationstodomain
+      {
          Policy   = 'Add_workstations_to_domain'
          Identity = 'Administrators'
       }
 
       #  2.2.6 (L1) Ensure 'Adjust memory quotas for a process' is set to 'Administrators, LOCAL SERVICE, NETWORK SERVICE'
-      UserRightsAssignment Adjustmemoryquotasforaprocess {
+      UserRightsAssignment Adjustmemoryquotasforaprocess
+      {
          Policy   = 'Adjust_memory_quotas_for_a_process'
          Identity = 'Administrators, LOCAL SERVICE, NETWORK SERVICE'
       }
 
       #  2.2.7 (L1) Ensure 'Allow log on locally' is set to 'Administrators'
-      UserRightsAssignment Allowlogonlocally {
+      UserRightsAssignment Allowlogonlocally
+      {
          Policy   = 'Allow_log_on_locally'
          Identity = 'Administrators'
       }
 
       #  2.2.8 (L1) Ensure 'Allow log on through Remote Desktop Services' is set to 'Administrators' (DC only)
-      UserRightsAssignment AllowlogonthroughRemoteDesktopServices {
+      UserRightsAssignment AllowlogonthroughRemoteDesktopServices
+      {
          Policy   = 'Allow_log_on_through_Remote_Desktop_Services'
          Identity = 'Administrators'
       }
@@ -93,49 +104,57 @@ Configuration CIS_WindowsServer2019_v110 {
       #  }
 
       #  2.2.10 (L1) Ensure 'Back up files and directories' is set to 'Administrators'
-      UserRightsAssignment Backupfilesanddirectories {
+      UserRightsAssignment Backupfilesanddirectories
+      {
          Policy   = 'Back_up_files_and_directories'
          Identity = 'Administrators'
       }
 
       #  2.2.11 (L1) Ensure 'Change the system time' is set to 'Administrators, LOCAL SERVICE'
-      UserRightsAssignment Changethesystemtime {
+      UserRightsAssignment Changethesystemtime
+      {
          Policy   = 'Change_the_system_time'
          Identity = 'Administrators, LOCAL SERVICE'
       }
 
       #  2.2.12 (L1) Ensure 'Change the time zone' is set to 'Administrators, LOCAL SERVICE'
-      UserRightsAssignment Changethetimezone {
+      UserRightsAssignment Changethetimezone
+      {
          Policy   = 'Change_the_time_zone'
          Identity = 'Administrators, LOCAL SERVICE'
       }
 
       #  2.2.13 (L1) Ensure 'Create a pagefile' is set to 'Administrators'
-      UserRightsAssignment Createapagefile {
+      UserRightsAssignment Createapagefile
+      {
          Policy   = 'Create_a_pagefile'
          Identity = 'Administrators'
       }
 
       #  2.2.14 (L1) Ensure 'Create a token object' is set to 'No One'
-      UserRightsAssignment Createatokenobject {
+      UserRightsAssignment Createatokenobject
+      {
          Policy   = 'Create_a_token_object'
          Identity = ''
       }
 
       #  2.2.15 (L1) Ensure 'Create global objects' is set to 'Administrators, LOCAL SERVICE, NETWORK SERVICE, SERVICE'
-      UserRightsAssignment Createglobalobjects {
+      UserRightsAssignment Createglobalobjects
+      {
          Policy   = 'Create_global_objects'
          Identity = 'Administrators, LOCAL SERVICE, NETWORK SERVICE, SERVICE'
       }
 
       #  2.2.16 (L1) Ensure 'Create permanent shared objects' is set to 'No One'
-      UserRightsAssignment Createpermanentsharedobjects {
+      UserRightsAssignment Createpermanentsharedobjects
+      {
          Policy   = 'Create_permanent_shared_objects'
          Identity = ''
       }
 
       #  2.2.17 (L1) Ensure 'Create symbolic links' is set to 'Administrators' (DC only)
-      UserRightsAssignment Createsymboliclinks {
+      UserRightsAssignment Createsymboliclinks
+      {
          Policy   = 'Create_symbolic_links'
          Identity = 'Administrators'
       }
@@ -148,7 +167,8 @@ Configuration CIS_WindowsServer2019_v110 {
       #  }
 
       #  2.2.19 (L1) Ensure 'Debug programs' is set to 'Administrators'
-      UserRightsAssignment Debugprograms {
+      UserRightsAssignment Debugprograms
+      {
          Policy   = 'Debug_programs'
          Identity = 'Administrators'
       }
@@ -161,31 +181,36 @@ Configuration CIS_WindowsServer2019_v110 {
       #  }
 
       #  2.2.21 (L1) Ensure 'Deny access to this computer from the network' is set to 'Guests, Local account and member of Administrators group' (MS only)
-      UserRightsAssignment Denyaccesstothiscomputerfromthenetwork {
+      UserRightsAssignment Denyaccesstothiscomputerfromthenetwork
+      {
          Policy   = 'Deny_access_to_this_computer_from_the_network'
          Identity = 'Guests, Local account, Administrators'
       }
 
       #  2.2.22 (L1) Ensure 'Deny log on as a batch job' to include 'Guests'
-      UserRightsAssignment Denylogonasabatchjob {
+      UserRightsAssignment Denylogonasabatchjob
+      {
          Policy   = 'Deny_log_on_as_a_batch_job'
          Identity = 'Guests'
       }
 
       #  2.2.23 (L1) Ensure 'Deny log on as a service' to include 'Guests'
-      UserRightsAssignment Denylogonasaservice {
+      UserRightsAssignment Denylogonasaservice
+      {
          Policy   = 'Deny_log_on_as_a_service'
          Identity = 'Guests'
       }
 
       #  2.2.24 (L1) Ensure 'Deny log on locally' to include 'Guests'
-      UserRightsAssignment Denylogonlocally {
+      UserRightsAssignment Denylogonlocally
+      {
          Policy   = 'Deny_log_on_locally'
          Identity = 'Guests'
       }
 
       # 2.2.25 (L1) Ensure 'Deny log on through Remote Desktop Services' is set to 'Guests' (DC only)
-      UserRightsAssignment DenylogonthroughRemoteDesktopServices {
+      UserRightsAssignment DenylogonthroughRemoteDesktopServices
+      {
          Policy   = 'Deny_log_on_through_Remote_Desktop_Services'
          Identity = 'Guests'
       }
@@ -205,27 +230,31 @@ Configuration CIS_WindowsServer2019_v110 {
       #  }
 
       #  2.2.28 (L1) Ensure 'Enable computer and user accounts to be trusted for delegation' is set to 'No One' (MS only)
-      UserRightsAssignment Enablecomputeranduseraccountstobetrustedfordelegation {
+      UserRightsAssignment Enablecomputeranduseraccountstobetrustedfordelegation
+      {
          Policy   = 'Enable_computer_and_user_accounts_to_be_trusted_for_delegation'
          Identity = ''
       }
 
       #  2.2.29 (L1) Ensure 'Force shutdown from a remote system' is set to 'Administrators'
-      UserRightsAssignment Forceshutdownfromaremotesystem {
+      UserRightsAssignment Forceshutdownfromaremotesystem
+      {
          Policy   = 'Force_shutdown_from_a_remote_system'
          Identity = 'Administrators'
       }
 
       #  2.2.30 (L1) Ensure 'Generate security audits' is set to 'LOCAL SERVICE, NETWORK SERVICE'
-      UserRightsAssignment Generatesecurityaudits {
+      UserRightsAssignment Generatesecurityaudits
+      {
          Policy   = 'Generate_security_audits'
          Identity = 'LOCAL SERVICE, NETWORK SERVICE'
       }
 
       #  2.2.31 (L1) Ensure 'Impersonate a client after authentication' is set to 'Administrators, LOCAL SERVICE, NETWORK SERVICE, SERVICE' (DC only)
-      UserRightsAssignment Impersonateaclientafterauthentication {
-         Policy   = 'Impersonate_a_client_after_authentication'
-         Identity = 'Administrators, LOCAL SERVICE, NETWORK SERVICE, SERVICE'
+      UserRightsAssignment Impersonateaclientafterauthentication
+      {
+         Policy = 'Impersonate_a_client_after_authentication'
+         Identity = if ($isIisServer -eq $false) { 'Administrators, LOCAL SERVICE, NETWORK SERVICE, SERVICE' } else { 'Administrators, LOCAL SERVICE, NETWORK SERVICE, SERVICE, IIS_IUSRS' }
       }
 
       #  2.2.32 (L1) Ensure 'Impersonate a client after authentication' is set to 'Administrators, LOCAL SERVICE, NETWORK SERVICE, SERVICE' and (when the Web Server (IIS) Role with Web Services Role Service is installed) 'IIS_IUSRS' (MS only)
@@ -237,25 +266,29 @@ Configuration CIS_WindowsServer2019_v110 {
 
 
       #  2.2.33 (L1) Ensure 'Increase scheduling priority' is set to 'Administrators'
-      UserRightsAssignment Increaseschedulingpriority {
+      UserRightsAssignment Increaseschedulingpriority
+      {
          Policy   = 'Increase_scheduling_priority'
          Identity = 'Administrators'
       }
 
       #  2.2.34 (L1) Ensure 'Load and unload device drivers' is set to 'Administrators'
-      UserRightsAssignment Loadandunloaddevicedrivers {
+      UserRightsAssignment Loadandunloaddevicedrivers
+      {
          Policy   = 'Load_and_unload_device_drivers'
          Identity = 'Administrators'
       }
 
       #  2.2.35 (L1) Ensure 'Lock pages in memory' is set to 'No One'
-      UserRightsAssignment Lockpagesinmemory {
+      UserRightsAssignment Lockpagesinmemory
+      {
          Policy   = 'Lock_pages_in_memory'
          Identity = ''
       }
 
       #  2.2.36 (L2) Ensure 'Log on as a batch job' is set to 'Administrators' (DC Only)
-      UserRightsAssignment Logonasabatchjob {
+      UserRightsAssignment Logonasabatchjob
+      {
          Policy   = 'Log_on_as_a_batch_job'
          Identity = 'Administrators'
       }
@@ -268,76 +301,88 @@ Configuration CIS_WindowsServer2019_v110 {
       #  }
 
       #  2.2.38 (L1) Ensure 'Manage auditing and security log' is set to 'Administrators' (MS only)
-      UserRightsAssignment Manageauditingandsecuritylog {
+      UserRightsAssignment Manageauditingandsecuritylog
+      {
          Policy   = 'Manage_auditing_and_security_log'
          Identity = 'Administrators'
       }
 
       #  2.2.39 (L1) Ensure 'Modify an object label' is set to 'No One'
-      UserRightsAssignment Modifyanobjectlabel {
+      UserRightsAssignment Modifyanobjectlabel
+      {
          Policy   = 'Modify_an_object_label'
          Identity = ''
       }
 
       # 2.2.40 (L1) Ensure 'Modify firmware environment values' is set to 'Administrators'
-      UserRightsAssignment Modifyfirmwareenvironmentvalues {
+      UserRightsAssignment Modifyfirmwareenvironmentvalues
+      {
          Policy   = 'Modify_firmware_environment_values'
          Identity = 'Administrators'
       }
 
       #  2.2.41 (L1) Ensure 'Perform volume maintenance tasks' is set to 'Administrators'
-      UserRightsAssignment Performvolumemaintenancetasks {
+      UserRightsAssignment Performvolumemaintenancetasks
+      {
          Policy   = 'Perform_volume_maintenance_tasks'
          Identity = 'Administrators'
       }
 
       #  2.2.42 (L1) Ensure 'Profile single process' is set to 'Administrators'
-      UserRightsAssignment Profilesingleprocess {
+      UserRightsAssignment Profilesingleprocess
+      {
          Policy   = 'Profile_single_process'
          Identity = 'Administrators'
       }
 
       #  2.2.43 (L1) Ensure 'Profile system performance' is set to 'Administrators, NT SERVICE\WdiServiceHost'
-      UserRightsAssignment Profilesystemperformance {
+      UserRightsAssignment Profilesystemperformance
+      {
          Policy   = 'Profile_system_performance'
          Identity = 'Administrators, NT SERVICE\WdiServiceHost'
       }
 
       #  2.2.44 (L1) Ensure 'Replace a process level token' is set to 'LOCAL SERVICE, NETWORK SERVICE'
-      UserRightsAssignment Replaceaprocessleveltoken {
+      UserRightsAssignment Replaceaprocessleveltoken
+      {
          Policy   = 'Replace_a_process_level_token'
          Identity = 'LOCAL SERVICE, NETWORK SERVICE'
       }
 
       #  2.2.45 (L1) Ensure 'Restore files and directories' is set to 'Administrators'
-      UserRightsAssignment Restorefilesanddirectories {
+      UserRightsAssignment Restorefilesanddirectories
+      {
          Policy   = 'Restore_files_and_directories'
          Identity = 'Administrators'
       }
 
       #  2.2.46 (L1) Ensure 'Shut down the system' is set to 'Administrators'
-      UserRightsAssignment Shutdownthesystem {
+      UserRightsAssignment Shutdownthesystem
+      {
          Policy   = 'Shut_down_the_system'
          Identity = 'Administrators'
       }
 
       #  2.2.47 (L1) Ensure 'Synchronize directory service data' is set to 'No One' (DC only)
-      UserRightsAssignment Synchronizedirectoryservicedata {
+      UserRightsAssignment Synchronizedirectoryservicedata
+      {
          Policy   = 'Synchronize_directory_service_data'
          Identity = ''
       }
 
       #  2.2.48 (L1) Ensure 'Take ownership of files or other objects' is set to 'Administrators'
-      UserRightsAssignment Takeownershipoffilesorotherobjects {
+      UserRightsAssignment Takeownershipoffilesorotherobjects
+      {
          Policy   = 'Take_ownership_of_files_or_other_objects'
          Identity = 'Administrators'
       }
 
       #Source: https://github.com/PowerShell/SecurityPolicyDsc
-      SecurityOption AccountSecurityOptions {
+      SecurityOption AccountSecurityOptions
+      {
          Name                                                                                                            = 'AccountSecurityOptions'
          # 2.3.1.1 (L1) Ensure 'Accounts: Administrator account status' is set to 'Disabled' (MS only)
-         Accounts_Administrator_account_status                                                                           = $Accounts_Administrator_account_status
+         Accounts_Administrator_account_status                                                                           = if ($isCloudServer -eq $true) { 'Enabled' } else { 'Disabled' }
          # 2.3.1.2 (L1) Ensure 'Accounts: Block Microsoft accounts' is set to 'Users can't add or log on with Microsoft accounts'
          Accounts_Block_Microsoft_accounts                                                                               = 'Users cant add or log on with Microsoft accounts'
          # 2.3.1.3 (L1) Ensure 'Accounts: Guest account status' is set to 'Disabled' (MS only)
@@ -345,7 +390,7 @@ Configuration CIS_WindowsServer2019_v110 {
          # 2.3.1.4 (L1) Ensure 'Accounts: Limit local account use of blank passwords to console logon only' is set to 'Enabled'
          Accounts_Limit_local_account_use_of_blank_passwords_to_console_logon_only                                       = 'Enabled'
          # 2.3.1.5 (L1) Configure 'Accounts: Rename administrator account'
-         Accounts_Rename_administrator_account = if ($Accounts_Administrator_account_status -eq 'Disabled') { 'User_Adm' } else { 'Administrator' } # WARNING! Any value different from Administrator
+         Accounts_Rename_administrator_account = if ($isCloudServer -eq $true) { 'Administrator' } else { 'User_Adm' }  # WARNING! Any value different from Administrator
          # 2.3.1.6 (L1) Configure 'Accounts: Rename guest account'
          Accounts_Rename_guest_account                                                                                   = 'User_Guest' # WARNING! Any value different from Guest
          # 2.3.2.1 (L1) Ensure 'Audit: Force audit policy subcategory settings (Windows Vista or later) to override audit policy category settings' is set to 'Enabled'
@@ -699,7 +744,7 @@ Configuration CIS_WindowsServer2019_v110 {
          Key       = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsFirewall\PublicProfile'
          ValueName = 'AllowLocalPolicyMerge'
          ValueType = 'DWord'
-         ValueData = '0'
+         ValueData = if ($isDomainJoined -eq $true) { '0' } else { '1' }
       }
 
       #  9.3.6 (L1) Ensure 'Windows Firewall: Public: Settings: Apply local connection security rules' is set to 'No'
@@ -709,7 +754,7 @@ Configuration CIS_WindowsServer2019_v110 {
          Key       = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsFirewall\PublicProfile'
          ValueName = 'AllowLocalIPsecPolicyMerge'
          ValueType = 'DWord'
-         ValueData = '0'
+         ValueData = if ($isDomainJoined -eq $true) { '0' } else { '1' }
       }
 
       #  9.3.7 (L1) Ensure 'Windows Firewall: Public: Logging: Name' is set to '%SYSTEMROOT%\System32\logfiles\firewall\publicfw.log'
@@ -2428,7 +2473,7 @@ Configuration CIS_WindowsServer2019_v110 {
          Key       = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\EventLog\Application'
          ValueName = 'MaxSize'
          ValueType = 'DWord'
-         ValueData = '32768'
+         ValueData = '2048000' # 250MB
       }
 
       #  18.9.26.2.1 (L1) Ensure 'Security: Control Event Log behavior when the log file reaches its maximum size' is set to 'Disabled'
@@ -2448,7 +2493,7 @@ Configuration CIS_WindowsServer2019_v110 {
          Key       = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\EventLog\Security'
          ValueName = 'MaxSize'
          ValueType = 'DWord'
-         ValueData = '196608'
+         ValueData = '4096000' # 500MB
       }
 
       #  18.9.26.3.1 (L1) Ensure 'Setup: Control Event Log behavior when the log file reaches its maximum size' is set to 'Disabled'
@@ -2468,7 +2513,7 @@ Configuration CIS_WindowsServer2019_v110 {
          Key       = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\EventLog\Setup'
          ValueName = 'MaxSize'
          ValueType = 'DWord'
-         ValueData = '32768'
+         ValueData = '2048000' # 250MB
       }
 
       #  18.9.26.4.1 (L1) Ensure 'System: Control Event Log behavior when the log file reaches its maximum size' is set to 'Disabled'
@@ -2488,7 +2533,7 @@ Configuration CIS_WindowsServer2019_v110 {
          Key       = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\EventLog\System'
          ValueName = 'MaxSize'
          ValueType = 'DWord'
-         ValueData = '32768'
+         ValueData = '2048000' # 250MB
       }
 
       #  18.9.30.2 (L1) Ensure 'Turn off Data Execution Prevention for Explorer' is set to 'Disabled'
@@ -3362,6 +3407,7 @@ Configuration CIS_WindowsServer2019_v110 {
          ValueType = 'DWord'
          ValueData = '1'
       }
+      #>
    }
 }
 
